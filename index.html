@@ -1,0 +1,1848 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7e7ce" />
+    <title>The Eighteenth Chapter of Precious Ziara Mamuad</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/pqina/flip/dist/flip.min.css" />
+
+    <style>
+      :root {
+        --champagne: #f7e7ce;
+        --rose-gold: #b76e79;
+        --blush: #f4c2c2;
+        --ivory: #fffff0;
+        --beige: #f5f0e6;
+        --silver: #d9d9d9;
+
+        --ink: #2a1f1e;
+        --ink-soft: rgba(42, 31, 30, 0.78);
+        --line: rgba(183, 110, 121, 0.26);
+        --glass: rgba(255, 255, 255, 0.14);
+        --glass-strong: rgba(255, 255, 255, 0.22);
+        --shadow: 0 18px 46px rgba(18, 12, 12, 0.22);
+        --shadow-soft: 0 14px 34px rgba(18, 12, 12, 0.16);
+
+        --radius-xl: 34px;
+        --radius-lg: 24px;
+        --radius-md: 18px;
+        --radius-sm: 14px;
+
+        --container: min(1120px, calc(100% - 44px));
+        --ease: cubic-bezier(0.2, 0.9, 0.2, 1);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        font-family: "Montserrat", system-ui, -apple-system, Segoe UI, sans-serif;
+        background: radial-gradient(1200px 700px at 15% -10%, rgba(244, 194, 194, 0.55), transparent 58%),
+          radial-gradient(900px 560px at 90% 6%, rgba(247, 231, 206, 0.72), transparent 60%),
+          radial-gradient(900px 700px at 50% 100%, rgba(183, 110, 121, 0.18), transparent 56%),
+          linear-gradient(180deg, #fff 0%, var(--beige) 100%);
+        overflow-x: hidden;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      button,
+      input,
+      select,
+      textarea {
+        font-family: inherit;
+      }
+
+      .grain {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 2;
+        opacity: 0.12;
+        mix-blend-mode: soft-light;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
+      }
+
+      #particles {
+        position: fixed;
+        inset: 0;
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      .loading {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        display: grid;
+        place-items: center;
+        background: radial-gradient(800px 600px at 50% 15%, rgba(247, 231, 206, 0.85), rgba(245, 240, 230, 0.92) 55%, rgba(255, 255, 255, 0.94));
+        transition: opacity 900ms var(--ease), visibility 900ms var(--ease);
+      }
+
+      .loading[data-state="hidden"] {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .loader-card {
+        width: min(520px, calc(100% - 44px));
+        padding: 32px 28px;
+        border-radius: 30px;
+        border: 1px solid rgba(183, 110, 121, 0.22);
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.24));
+        backdrop-filter: blur(14px);
+        box-shadow: var(--shadow);
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .loader-card::before {
+        content: "";
+        position: absolute;
+        inset: -120px -60px;
+        background: linear-gradient(120deg, transparent 44%, rgba(247, 231, 206, 0.85) 52%, transparent 60%);
+        transform: translateX(-38%);
+        animation: shimmer 1.85s infinite linear;
+        opacity: 0.55;
+      }
+
+      .loader-monogram {
+        font-family: "Playfair Display", serif;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        font-size: clamp(26px, 5vw, 44px);
+        color: rgba(42, 31, 30, 0.86);
+        position: relative;
+      }
+
+      .loader-sub {
+        margin: 10px 0 0;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 18px;
+        color: var(--ink-soft);
+        position: relative;
+      }
+
+      .loader-bar {
+        margin: 18px auto 0;
+        width: min(360px, 100%);
+        height: 10px;
+        border-radius: 999px;
+        background: rgba(183, 110, 121, 0.12);
+        overflow: hidden;
+        position: relative;
+      }
+
+      .loader-bar span {
+        position: absolute;
+        inset: 0;
+        width: 45%;
+        border-radius: 999px;
+        background: linear-gradient(90deg, rgba(183, 110, 121, 0), rgba(183, 110, 121, 0.8), rgba(247, 231, 206, 0.9), rgba(183, 110, 121, 0));
+        animation: loadSlide 1.2s infinite var(--ease);
+      }
+
+      @keyframes loadSlide {
+        0% {
+          transform: translateX(-70%);
+        }
+        100% {
+          transform: translateX(240%);
+        }
+      }
+
+      @keyframes shimmer {
+        0% {
+          transform: translateX(-38%) rotate(10deg);
+        }
+        100% {
+          transform: translateX(38%) rotate(10deg);
+        }
+      }
+
+      .nav {
+        position: fixed;
+        top: 18px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 50;
+        width: var(--container);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 14px;
+        border-radius: 999px;
+        border: 1px solid rgba(183, 110, 121, 0.2);
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.58), rgba(255, 255, 255, 0.12));
+        backdrop-filter: blur(14px);
+        box-shadow: 0 14px 38px rgba(18, 12, 12, 0.14);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 520ms var(--ease), transform 520ms var(--ease);
+      }
+
+      .nav[data-visible="true"] {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateX(-50%) translateY(0);
+      }
+
+      .nav-brand {
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+        padding-left: 6px;
+        user-select: none;
+      }
+
+      .nav-brand strong {
+        font-family: "Playfair Display", serif;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        font-size: 14px;
+      }
+
+      .nav-brand span {
+        font-family: "Cormorant Garamond", serif;
+        font-style: italic;
+        font-size: 14px;
+        color: rgba(42, 31, 30, 0.7);
+      }
+
+      .nav-links {
+        display: none;
+        gap: 14px;
+        align-items: center;
+      }
+
+      .nav-links a {
+        font-size: 12px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: rgba(42, 31, 30, 0.76);
+        padding: 9px 10px;
+        border-radius: 999px;
+        transition: background 260ms var(--ease), color 260ms var(--ease);
+      }
+
+      .nav-links a:hover {
+        background: rgba(183, 110, 121, 0.12);
+        color: rgba(42, 31, 30, 0.92);
+      }
+
+      .nav-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 14px;
+        border-radius: 999px;
+        border: 1px solid rgba(183, 110, 121, 0.3);
+        background: linear-gradient(135deg, rgba(247, 231, 206, 0.6), rgba(244, 194, 194, 0.26));
+        box-shadow: 0 10px 24px rgba(183, 110, 121, 0.18);
+        font-size: 12px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: rgba(42, 31, 30, 0.9);
+        transition: transform 260ms var(--ease), box-shadow 260ms var(--ease);
+      }
+
+      .nav-cta:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 14px 28px rgba(183, 110, 121, 0.22);
+      }
+
+      @media (min-width: 900px) {
+        .nav-links {
+          display: flex;
+        }
+      }
+
+      .hero {
+        min-height: 100svh;
+        position: relative;
+        display: grid;
+        align-items: end;
+        padding: 82px 0 40px;
+      }
+
+      .hero-media {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+      }
+
+      .hero-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: scale(1.08);
+        filter: contrast(1.02) saturate(1.04);
+      }
+
+      .hero-media::after {
+        content: "";
+        position: absolute;
+        inset: -60px -40px;
+        background:
+          radial-gradient(700px 550px at 20% 26%, rgba(247, 231, 206, 0.48), transparent 60%),
+          radial-gradient(800px 650px at 80% 18%, rgba(244, 194, 194, 0.38), transparent 62%),
+          linear-gradient(180deg, rgba(15, 10, 10, 0.66) 0%, rgba(15, 10, 10, 0.32) 46%, rgba(245, 240, 230, 0.22) 100%);
+        mix-blend-mode: multiply;
+      }
+
+      .hero-shimmer {
+        position: absolute;
+        inset: -50% -20%;
+        background: linear-gradient(120deg, transparent 48%, rgba(247, 231, 206, 0.68) 52%, transparent 58%);
+        transform: translateX(-48%) rotate(8deg);
+        animation: heroSweep 5.2s infinite linear;
+        opacity: 0.62;
+        pointer-events: none;
+      }
+
+      @keyframes heroSweep {
+        0% {
+          transform: translateX(-48%) rotate(8deg);
+        }
+        100% {
+          transform: translateX(48%) rotate(8deg);
+        }
+      }
+
+      .hero-inner {
+        width: var(--container);
+        margin: 0 auto;
+        position: relative;
+        z-index: 3;
+        display: grid;
+        gap: 18px;
+      }
+
+      .hero-card {
+        padding: 22px 18px;
+        border-radius: var(--radius-xl);
+        border: 1px solid rgba(247, 231, 206, 0.28);
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.08));
+        backdrop-filter: blur(18px);
+        box-shadow: 0 22px 70px rgba(8, 5, 5, 0.38);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(500px 240px at 10% 12%, rgba(247, 231, 206, 0.28), transparent 58%),
+          radial-gradient(420px 260px at 92% 0%, rgba(244, 194, 194, 0.22), transparent 58%);
+        opacity: 0.95;
+        pointer-events: none;
+      }
+
+      .hero-title {
+        margin: 0;
+        font-family: "Playfair Display", serif;
+        font-weight: 700;
+        font-size: clamp(26px, 4.7vw, 54px);
+        line-height: 1.08;
+        letter-spacing: 0.02em;
+        color: rgba(255, 255, 255, 0.92);
+        text-shadow: 0 10px 40px rgba(0, 0, 0, 0.38);
+        position: relative;
+      }
+
+      .hero-title em {
+        font-style: italic;
+        font-weight: 600;
+        color: rgba(247, 231, 206, 0.95);
+      }
+
+      .hero-subtitle {
+        margin: 10px 0 0;
+        font-family: "Cormorant Garamond", serif;
+        font-style: italic;
+        font-size: clamp(16px, 2.2vw, 20px);
+        letter-spacing: 0.08em;
+        color: rgba(255, 255, 255, 0.82);
+        position: relative;
+      }
+
+      .hero-meta {
+        margin-top: 18px;
+        display: grid;
+        gap: 10px;
+        position: relative;
+      }
+
+      .hero-meta strong {
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 600;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.86);
+      }
+
+      .meta-grid {
+        display: grid;
+        gap: 12px;
+      }
+
+      .meta-line {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.82);
+        line-height: 1.55;
+      }
+
+      .meta-line i {
+        color: rgba(247, 231, 206, 0.9);
+        margin-top: 3px;
+        width: 20px;
+        text-align: center;
+        filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.28));
+      }
+
+      .hero-actions {
+        margin-top: 18px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        position: relative;
+      }
+
+      .btn {
+        border: none;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 14px 18px;
+        border-radius: 999px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        font-size: 12px;
+        transition: transform 260ms var(--ease), box-shadow 260ms var(--ease), background 260ms var(--ease);
+        position: relative;
+        overflow: hidden;
+        user-select: none;
+      }
+
+      .btn-primary {
+        color: rgba(42, 31, 30, 0.92);
+        background: linear-gradient(135deg, rgba(247, 231, 206, 0.95), rgba(244, 194, 194, 0.78));
+        box-shadow: 0 16px 44px rgba(0, 0, 0, 0.26);
+      }
+
+      .btn-primary::after {
+        content: "";
+        position: absolute;
+        inset: -120px -40px;
+        background: linear-gradient(120deg, transparent 44%, rgba(255, 255, 255, 0.66) 52%, transparent 60%);
+        transform: translateX(-58%) rotate(10deg);
+        animation: btnSweep 2.8s infinite linear;
+        opacity: 0.55;
+      }
+
+      @keyframes btnSweep {
+        0% {
+          transform: translateX(-58%) rotate(10deg);
+        }
+        100% {
+          transform: translateX(58%) rotate(10deg);
+        }
+      }
+
+      .btn-ghost {
+        color: rgba(255, 255, 255, 0.88);
+        border: 1px solid rgba(247, 231, 206, 0.36);
+        background: rgba(255, 255, 255, 0.06);
+        backdrop-filter: blur(16px);
+      }
+
+      .btn:hover {
+        transform: translateY(-1px);
+      }
+
+      .btn:active {
+        transform: translateY(0);
+      }
+
+      @media (min-width: 760px) {
+        .hero {
+          padding: 110px 0 56px;
+          align-items: center;
+        }
+
+        .hero-card {
+          padding: 30px 30px;
+        }
+
+        .meta-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      section {
+        position: relative;
+        z-index: 3;
+      }
+
+      .section {
+        padding: 76px 0;
+      }
+
+      .section-inner {
+        width: var(--container);
+        margin: 0 auto;
+      }
+
+      .section-head {
+        display: grid;
+        gap: 12px;
+        margin-bottom: 28px;
+      }
+
+      .kicker {
+        font-size: 12px;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: rgba(42, 31, 30, 0.66);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .kicker::before {
+        content: "";
+        width: 42px;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(183, 110, 121, 0.6), transparent);
+      }
+
+      .h2 {
+        margin: 0;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(34px, 6vw, 58px);
+        font-weight: 600;
+        letter-spacing: 0.02em;
+      }
+
+      .lead {
+        margin: 0;
+        max-width: 64ch;
+        color: rgba(42, 31, 30, 0.76);
+        line-height: 1.8;
+        font-size: 15px;
+      }
+
+      .glass-panel {
+        border-radius: var(--radius-xl);
+        border: 1px solid rgba(183, 110, 121, 0.18);
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.64), rgba(255, 255, 255, 0.14));
+        box-shadow: var(--shadow-soft);
+        backdrop-filter: blur(18px);
+        overflow: hidden;
+        position: relative;
+      }
+
+      .glass-panel::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(520px 260px at 10% 10%, rgba(247, 231, 206, 0.5), transparent 60%),
+          radial-gradient(540px 320px at 95% 15%, rgba(244, 194, 194, 0.46), transparent 64%);
+        opacity: 0.58;
+        pointer-events: none;
+      }
+
+      .welcome-grid {
+        display: grid;
+        gap: 18px;
+        padding: 18px;
+      }
+
+      .portrait {
+        border-radius: calc(var(--radius-xl) - 10px);
+        overflow: hidden;
+        position: relative;
+        min-height: 320px;
+        border: 1px solid rgba(183, 110, 121, 0.2);
+      }
+
+      .portrait img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: scale(1.06);
+      }
+
+      .portrait::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(420px 260px at 65% 22%, rgba(247, 231, 206, 0.32), transparent 65%),
+          linear-gradient(180deg, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.22) 100%);
+        mix-blend-mode: soft-light;
+      }
+
+      .welcome-copy {
+        position: relative;
+        padding: 18px 18px 22px;
+      }
+
+      .welcome-copy p {
+        margin: 0;
+        color: rgba(42, 31, 30, 0.78);
+        line-height: 1.95;
+        font-size: 14px;
+      }
+
+      .welcome-copy p + p {
+        margin-top: 14px;
+      }
+
+      .welcome-highlight {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 14px;
+        border-radius: 999px;
+        border: 1px solid rgba(183, 110, 121, 0.22);
+        background: rgba(247, 231, 206, 0.42);
+        color: rgba(42, 31, 30, 0.88);
+        font-family: "Cormorant Garamond", serif;
+        font-style: italic;
+        letter-spacing: 0.08em;
+        margin-bottom: 14px;
+      }
+
+      @media (min-width: 980px) {
+        .welcome-grid {
+          grid-template-columns: 0.95fr 1.05fr;
+          gap: 22px;
+          padding: 22px;
+        }
+
+        .welcome-copy {
+          padding: 14px 16px 18px;
+        }
+      }
+
+      .details-grid {
+        display: grid;
+        gap: 14px;
+        margin-top: 20px;
+      }
+
+      .card {
+        padding: 18px 16px;
+        border-radius: var(--radius-lg);
+        border: 1px solid rgba(183, 110, 121, 0.18);
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.68), rgba(255, 255, 255, 0.18));
+        backdrop-filter: blur(14px);
+        box-shadow: 0 14px 34px rgba(18, 12, 12, 0.12);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(420px 220px at 10% 10%, rgba(247, 231, 206, 0.62), transparent 60%),
+          radial-gradient(420px 240px at 90% 15%, rgba(244, 194, 194, 0.5), transparent 65%);
+        opacity: 0.45;
+        pointer-events: none;
+      }
+
+      .card h3 {
+        margin: 0 0 10px;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 22px;
+        letter-spacing: 0.02em;
+        position: relative;
+      }
+
+      .card p {
+        margin: 0;
+        color: rgba(42, 31, 30, 0.76);
+        line-height: 1.8;
+        font-size: 14px;
+        position: relative;
+      }
+
+      .detail-row {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+        position: relative;
+      }
+
+      .detail-row i {
+        margin-top: 4px;
+        width: 22px;
+        text-align: center;
+        color: rgba(183, 110, 121, 0.86);
+      }
+
+      @media (min-width: 900px) {
+        .details-grid {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 16px;
+        }
+      }
+
+      .map-wrap {
+        margin-top: 16px;
+        border-radius: var(--radius-xl);
+        overflow: hidden;
+        border: 1px solid rgba(183, 110, 121, 0.18);
+        box-shadow: 0 18px 52px rgba(18, 12, 12, 0.14);
+        position: relative;
+      }
+
+      .map-wrap iframe {
+        width: 100%;
+        height: 340px;
+        border: 0;
+        display: block;
+        filter: saturate(1.05) contrast(1.02);
+      }
+
+      @media (min-width: 900px) {
+        .map-wrap iframe {
+          height: 420px;
+        }
+      }
+
+      .map-actions {
+        margin-top: 14px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .countdown {
+        display: grid;
+        gap: 14px;
+      }
+
+      .countdown-panel {
+        padding: 18px;
+      }
+
+      .tick {
+        font-family: "Playfair Display", serif;
+      }
+
+      .tick-group {
+        display: grid;
+        gap: 10px;
+        place-items: center;
+        padding: 10px 10px;
+        border-radius: 20px;
+        border: 1px solid rgba(183, 110, 121, 0.18);
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.66), rgba(255, 255, 255, 0.16));
+        box-shadow: 0 16px 42px rgba(18, 12, 12, 0.10);
+        backdrop-filter: blur(14px);
+      }
+
+      .tick-label {
+        font-family: "Montserrat", system-ui, -apple-system, Segoe UI, sans-serif;
+        font-size: 11px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: rgba(42, 31, 30, 0.7);
+      }
+
+      .tick-flip {
+        border-radius: 16px;
+        letter-spacing: 0.18em;
+        text-indent: 0.18em;
+      }
+
+      .tick-flip-panel {
+        color: rgba(42, 31, 30, 0.92);
+        background-color: rgba(255, 255, 255, 0.82);
+      }
+
+      .tick-flip-shadow {
+        box-shadow: 0 16px 40px rgba(18, 12, 12, 0.16);
+      }
+
+      @media (min-width: 760px) {
+        .countdown-panel {
+          padding: 22px;
+        }
+        .tick-group {
+          padding: 12px 12px;
+        }
+      }
+
+      .dress-grid {
+        display: grid;
+        gap: 16px;
+      }
+
+      .dress-callout {
+        display: grid;
+        gap: 10px;
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 14px;
+        border-radius: 999px;
+        border: 1px solid rgba(183, 110, 121, 0.22);
+        background: rgba(255, 255, 255, 0.52);
+        color: rgba(42, 31, 30, 0.86);
+        width: fit-content;
+        box-shadow: 0 14px 34px rgba(18, 12, 12, 0.1);
+      }
+
+      .pill i {
+        color: rgba(183, 110, 121, 0.86);
+      }
+
+      .pill strong {
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-size: 12px;
+      }
+
+      .no-blue {
+        border-color: rgba(183, 110, 121, 0.4);
+        background: linear-gradient(135deg, rgba(247, 231, 206, 0.7), rgba(244, 194, 194, 0.38));
+      }
+
+      .swatches {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 12px;
+      }
+
+      @media (min-width: 760px) {
+        .dress-grid {
+          grid-template-columns: 1.2fr 0.8fr;
+          align-items: start;
+          gap: 20px;
+        }
+
+        .swatches {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+      }
+
+      .swatch {
+        border-radius: var(--radius-md);
+        border: 1px solid rgba(183, 110, 121, 0.2);
+        background: rgba(255, 255, 255, 0.6);
+        padding: 12px 12px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        box-shadow: 0 14px 34px rgba(18, 12, 12, 0.08);
+      }
+
+      .swatch .dot {
+        width: 26px;
+        height: 26px;
+        border-radius: 999px;
+        border: 1px solid rgba(18, 12, 12, 0.12);
+        box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 0.32), 0 10px 18px rgba(18, 12, 12, 0.12);
+      }
+
+      .swatch span {
+        font-size: 12px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: rgba(42, 31, 30, 0.78);
+      }
+
+      .rsvp-grid {
+        display: grid;
+        gap: 16px;
+      }
+
+      @media (min-width: 980px) {
+        .rsvp-grid {
+          grid-template-columns: 0.95fr 1.05fr;
+          gap: 20px;
+          align-items: start;
+        }
+      }
+
+      .contact-list {
+        display: grid;
+        gap: 14px;
+        padding: 18px;
+      }
+
+      .contact-list h3 {
+        margin: 0 0 4px;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 22px;
+      }
+
+      .contact-card {
+        border-radius: var(--radius-lg);
+        border: 1px solid rgba(183, 110, 121, 0.18);
+        background: rgba(255, 255, 255, 0.5);
+        padding: 14px 14px;
+      }
+
+      .contact-card strong {
+        display: block;
+        font-size: 13px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: rgba(42, 31, 30, 0.84);
+        margin-bottom: 6px;
+      }
+
+      .contact-row {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        color: rgba(42, 31, 30, 0.76);
+        font-size: 13px;
+        line-height: 1.6;
+      }
+
+      .contact-row i {
+        width: 18px;
+        text-align: center;
+        color: rgba(183, 110, 121, 0.86);
+      }
+
+      form {
+        padding: 18px;
+        display: grid;
+        gap: 14px;
+      }
+
+      .field {
+        display: grid;
+        gap: 8px;
+      }
+
+      .field label {
+        font-size: 12px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: rgba(42, 31, 30, 0.72);
+      }
+
+      .control {
+        border-radius: 16px;
+        border: 1px solid rgba(183, 110, 121, 0.22);
+        background: rgba(255, 255, 255, 0.62);
+        padding: 12px 12px;
+        font-size: 14px;
+        color: rgba(42, 31, 30, 0.88);
+        outline: none;
+        transition: border 240ms var(--ease), box-shadow 240ms var(--ease);
+      }
+
+      .control:focus {
+        border-color: rgba(183, 110, 121, 0.5);
+        box-shadow: 0 0 0 4px rgba(244, 194, 194, 0.28);
+      }
+
+      .control[aria-invalid="true"] {
+        border-color: rgba(183, 110, 121, 0.78);
+        box-shadow: 0 0 0 4px rgba(183, 110, 121, 0.14);
+      }
+
+      .error {
+        min-height: 16px;
+        font-size: 12px;
+        color: rgba(183, 110, 121, 0.92);
+      }
+
+      .form-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+      }
+
+      .toast {
+        position: fixed;
+        bottom: 22px;
+        left: 50%;
+        transform: translateX(-50%) translateY(12px);
+        z-index: 200;
+        width: min(520px, calc(100% - 44px));
+        border-radius: 18px;
+        border: 1px solid rgba(183, 110, 121, 0.22);
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.2));
+        backdrop-filter: blur(16px);
+        box-shadow: var(--shadow);
+        padding: 14px 14px;
+        display: grid;
+        gap: 6px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 360ms var(--ease), transform 360ms var(--ease);
+      }
+
+      .toast[data-show="true"] {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateX(-50%) translateY(0);
+      }
+
+      .toast strong {
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-size: 12px;
+      }
+
+      .toast p {
+        margin: 0;
+        color: rgba(42, 31, 30, 0.74);
+        line-height: 1.6;
+        font-size: 13px;
+      }
+
+      .quote {
+        position: relative;
+        padding: 88px 0;
+        overflow: hidden;
+      }
+
+      .quote::before {
+        content: "";
+        position: absolute;
+        inset: -80px -80px;
+        background:
+          radial-gradient(900px 520px at 18% 10%, rgba(247, 231, 206, 0.78), transparent 60%),
+          radial-gradient(900px 600px at 90% 14%, rgba(244, 194, 194, 0.62), transparent 62%),
+          radial-gradient(900px 700px at 50% 100%, rgba(183, 110, 121, 0.22), transparent 64%),
+          linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(245, 240, 230, 0.92));
+        filter: blur(1px);
+        animation: breathe 9s infinite alternate ease-in-out;
+      }
+
+      @keyframes breathe {
+        0% {
+          transform: scale(1) translateY(0);
+        }
+        100% {
+          transform: scale(1.04) translateY(-10px);
+        }
+      }
+
+      .quote-inner {
+        width: var(--container);
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+      }
+
+      .quote-card {
+        padding: 26px 18px;
+        text-align: center;
+      }
+
+      .quote-text {
+        margin: 0;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(20px, 3.2vw, 32px);
+        line-height: 1.6;
+        color: rgba(42, 31, 30, 0.86);
+      }
+
+      .quote-sign {
+        margin-top: 16px;
+        font-family: "Playfair Display", serif;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        color: rgba(42, 31, 30, 0.86);
+      }
+
+      .quote-sign span {
+        display: block;
+        margin-top: 6px;
+        font-family: "Cormorant Garamond", serif;
+        font-style: italic;
+        color: rgba(183, 110, 121, 0.86);
+      }
+
+      footer {
+        padding: 28px 0 40px;
+        position: relative;
+        z-index: 3;
+      }
+
+      .footer-inner {
+        width: var(--container);
+        margin: 0 auto;
+        display: grid;
+        gap: 14px;
+        text-align: center;
+      }
+
+      .mono {
+        font-family: "Playfair Display", serif;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        font-size: 18px;
+      }
+
+      .foot-meta {
+        color: rgba(42, 31, 30, 0.7);
+        font-size: 13px;
+      }
+
+      .socials {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .socials a {
+        width: 42px;
+        height: 42px;
+        border-radius: 999px;
+        border: 1px solid rgba(183, 110, 121, 0.18);
+        background: rgba(255, 255, 255, 0.56);
+        display: grid;
+        place-items: center;
+        box-shadow: 0 14px 30px rgba(18, 12, 12, 0.08);
+        transition: transform 260ms var(--ease), box-shadow 260ms var(--ease), background 260ms var(--ease);
+      }
+
+      .socials a:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 18px 34px rgba(18, 12, 12, 0.12);
+        background: rgba(247, 231, 206, 0.54);
+      }
+
+      .to-top {
+        position: fixed;
+        right: 18px;
+        bottom: 18px;
+        z-index: 120;
+        width: 44px;
+        height: 44px;
+        border-radius: 999px;
+        border: 1px solid rgba(183, 110, 121, 0.22);
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.76), rgba(255, 255, 255, 0.18));
+        backdrop-filter: blur(14px);
+        box-shadow: 0 18px 42px rgba(18, 12, 12, 0.14);
+        cursor: pointer;
+        display: grid;
+        place-items: center;
+        opacity: 0;
+        transform: translateY(10px);
+        pointer-events: none;
+        transition: opacity 360ms var(--ease), transform 360ms var(--ease);
+      }
+
+      .to-top[data-visible="true"] {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+
+      .to-top i {
+        color: rgba(183, 110, 121, 0.88);
+      }
+
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        .hero-shimmer,
+        .loader-card::before,
+        .btn-primary::after,
+        .quote::before {
+          animation: none !important;
+        }
+
+        .tick,
+        .tick * {
+          animation: none !important;
+          transition: none !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="loading" id="loading" aria-live="polite">
+      <div class="loader-card">
+        <div class="loader-monogram">PZM</div>
+        <p class="loader-sub">Preparing your invitation...</p>
+        <div class="loader-bar" aria-hidden="true"><span></span></div>
+      </div>
+    </div>
+
+    <canvas id="particles" aria-hidden="true"></canvas>
+    <div class="grain" aria-hidden="true"></div>
+
+    <header class="nav" id="nav" data-visible="false" aria-label="Invitation navigation">
+      <div class="nav-brand" aria-hidden="true">
+        <strong>PZM</strong><span>Debut</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#welcome">Welcome</a>
+        <a href="#details">Details</a>
+        <a href="#countdown">Countdown</a>
+        <a href="#dresscode">Dress Code</a>
+        <a href="#rsvp">RSVP</a>
+      </nav>
+      <a class="nav-cta" href="#rsvp"><i class="fa-solid fa-envelope-open-text"></i> RSVP</a>
+    </header>
+
+    <main>
+      <section class="hero" id="top">
+        <div class="hero-media" aria-hidden="true">
+          <img
+            src="https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=ultra%20realistic%20studio%20portrait%20of%20a%20beautiful%20elegant%20Filipina%20debutante%2C%20blush%20pink%20evening%20gown%2C%20champagne%20gold%20rim%20light%2C%20high%20fashion%20editorial%2C%2085mm%20lens%2C%20soft%20bokeh%2C%20luxury%20beauty%20photography%2C%20clean%20background%2C%20sharp%20focus%2C%20natural%20skin%20tones&image_size=portrait_16_9"
+            alt="Portrait of the debutante (placeholder image)"
+            loading="eager"
+          />
+          <div class="hero-shimmer"></div>
+        </div>
+
+        <div class="hero-inner">
+          <div class="hero-card" data-aos="fade-up" data-aos-duration="900">
+            <h1 class="hero-title">
+              The Eighteenth Chapter of <em>Precious Ziara Mamuad</em>:
+              <br />
+              A Night of Elegance, Dreams, and New Beginnings
+            </h1>
+            <p class="hero-subtitle">PRECIOUS ZIARA L. MAMUAD</p>
+
+            <div class="hero-meta">
+              <strong>August 22, 2026 • 5:00 PM</strong>
+              <div class="meta-grid">
+                <div class="meta-line">
+                  <i class="fa-solid fa-location-dot"></i>
+                  <span>
+                    QSSIS Banquet Hall
+                    <br />
+                    3474 Kingston Rd.
+                    <br />
+                    Scarborough, Ontario M1M 1R5
+                  </span>
+                </div>
+                <div class="meta-line">
+                  <i class="fa-solid fa-sparkles"></i>
+                  <span>Elegant, modern, feminine, and sophisticated</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#welcome">
+                View Invitation
+                <i class="fa-solid fa-angle-down"></i>
+              </a>
+              <a class="btn btn-ghost" href="#details">
+                Event Details
+                <i class="fa-solid fa-map-location-dot"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="welcome">
+        <div class="section-inner">
+          <div class="section-head" data-aos="fade-up" data-aos-duration="900">
+            <div class="kicker">A warm welcome</div>
+            <h2 class="h2">Welcome</h2>
+            <p class="lead">
+              With profound gratitude to God and hearts filled with love, we warmly welcome you to this special celebration.
+            </p>
+          </div>
+
+          <div class="glass-panel" data-aos="fade-up" data-aos-duration="900" data-aos-delay="60">
+            <div class="welcome-grid">
+              <div class="portrait" aria-hidden="false">
+                <img
+                  src="https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=ultra%20realistic%20editorial%20portrait%20of%20a%20Filipina%20debutante%20in%20rose%20gold%20gown%2C%20soft%20ivory%20studio%20background%2C%20beauty%20lighting%2C%20high-end%20magazine%20style%2C%2085mm%2C%20shallow%20depth%20of%20field%2C%20luxury%20photography&image_size=portrait_16_9"
+                  alt="Debutante portrait (placeholder image)"
+                  loading="lazy"
+                />
+              </div>
+              <div class="welcome-copy">
+                <div class="welcome-highlight">
+                  ✨ <span>Precious Ziara Mamuad</span> ✨
+                </div>
+                <p>
+                  With profound gratitude to God and hearts filled with love, we warmly welcome you to this special celebration honoring the 18th Birthday of our beloved daughter, ✨
+                  Precious Ziara Mamuad ✨
+                </p>
+                <p>
+                  Eighteen years ago, our lives were blessed with a precious gift. We watched her grow from a little girl full of innocence and wonder into a remarkable young woman of grace, strength, kindness, and endless dreams.
+                </p>
+                <p>
+                  Today marks a beautiful milestone as she embarks on a new journey into adulthood. This celebration is more than a birthday—it is a tribute to the memories she has created, the lessons she has learned, the people who have guided her, and the dreams she continues to pursue.
+                </p>
+                <p>
+                  Your presence in her life has helped shape the person she is becoming, and it would be our greatest honor to have you join us as we celebrate this once-in-a-lifetime occasion surrounded by family, friends, and loved ones.
+                </p>
+                <p>
+                  Together, let us create an evening filled with joy, laughter, gratitude, and cherished memories as Precious begins her next chapter.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="details">
+        <div class="section-inner">
+          <div class="section-head" data-aos="fade-up" data-aos-duration="900">
+            <div class="kicker">Save the date</div>
+            <h2 class="h2">Event Details</h2>
+            <p class="lead">Everything you need for a seamless evening of elegance.</p>
+          </div>
+
+          <div class="details-grid" data-aos="fade-up" data-aos-duration="900" data-aos-delay="80">
+            <article class="card">
+              <h3>Date</h3>
+              <div class="detail-row">
+                <i class="fa-regular fa-calendar"></i>
+                <p>August 22, 2026</p>
+              </div>
+            </article>
+            <article class="card">
+              <h3>Time</h3>
+              <div class="detail-row">
+                <i class="fa-regular fa-clock"></i>
+                <p>5:00 PM</p>
+              </div>
+            </article>
+            <article class="card">
+              <h3>Venue</h3>
+              <div class="detail-row">
+                <i class="fa-solid fa-location-dot"></i>
+                <p>
+                  QSSIS Banquet Hall<br />
+                  3474 Kingston Rd.<br />
+                  Scarborough, Ontario M1M 1R5
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <div class="map-wrap" data-aos="fade-up" data-aos-duration="900" data-aos-delay="120">
+            <iframe
+              title="Map to QSSIS Banquet Hall"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=3474%20Kingston%20Rd%2C%20Scarborough%2C%20Ontario%20M1M%201R5&output=embed"
+            ></iframe>
+          </div>
+
+          <div class="map-actions" data-aos="fade-up" data-aos-duration="900" data-aos-delay="150">
+            <a
+              class="btn btn-primary"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.google.com/maps/search/?api=1&query=3474%20Kingston%20Rd%2C%20Scarborough%2C%20Ontario%20M1M%201R5"
+            >
+              Open in Maps
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+            <a class="btn btn-ghost" href="#rsvp">
+              RSVP Required
+              <i class="fa-solid fa-clipboard-check"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="countdown">
+        <div class="section-inner">
+          <div class="section-head" data-aos="fade-up" data-aos-duration="900">
+            <div class="kicker">Until the celebration</div>
+            <h2 class="h2">Countdown</h2>
+            <p class="lead">Counting down to August 22, 2026 • 5:00 PM.</p>
+          </div>
+
+          <div class="countdown" data-aos="fade-up" data-aos-duration="900" data-aos-delay="100">
+            <div class="glass-panel countdown-panel">
+              <div class="tick" data-did-init="handleTickInit" aria-label="Countdown timer">
+                <div data-repeat="true" data-layout="horizontal center fit" data-transform="preset(d, h, m, s) -> delay">
+                  <div class="tick-group">
+                    <div data-key="value" data-repeat="true" data-transform="pad(00) -> split -> delay">
+                      <span data-view="flip"></span>
+                    </div>
+                    <span data-key="label" data-view="text" class="tick-label"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="dresscode">
+        <div class="section-inner">
+          <div class="section-head" data-aos="fade-up" data-aos-duration="900">
+            <div class="kicker">Fashion notes</div>
+            <h2 class="h2">Dress Code</h2>
+            <p class="lead">Formal / Semi-Formal Attire</p>
+          </div>
+
+          <div class="dress-grid" data-aos="fade-up" data-aos-duration="900" data-aos-delay="90">
+            <div class="glass-panel" style="padding: 18px">
+              <div class="dress-callout">
+                <div class="pill">
+                  <i class="fa-solid fa-user-tie"></i><strong>Formal / Semi-Formal</strong>
+                </div>
+                <div class="pill no-blue">
+                  <i class="fa-solid fa-circle-xmark"></i>
+                  <strong>No Blue Attire</strong>
+                </div>
+                <p class="lead" style="margin-top: 10px">
+                  To maintain the elegance and harmony of the celebration's color palette, we kindly request that guests refrain from wearing <strong>BLUE</strong> attire in any shade.
+                </p>
+              </div>
+            </div>
+
+            <div class="glass-panel" style="padding: 18px">
+              <div class="kicker" style="margin: 0 0 8px">Preferred Colors</div>
+              <div class="swatches" aria-label="Preferred color swatches">
+                <div class="swatch"><div class="dot" style="background: var(--champagne)"></div><span>Champagne Gold</span></div>
+                <div class="swatch"><div class="dot" style="background: var(--blush)"></div><span>Blush Pink</span></div>
+                <div class="swatch"><div class="dot" style="background: var(--rose-gold)"></div><span>Rose Gold</span></div>
+                <div class="swatch"><div class="dot" style="background: var(--ivory)"></div><span>Ivory</span></div>
+                <div class="swatch"><div class="dot" style="background: var(--beige)"></div><span>Beige</span></div>
+                <div class="swatch"><div class="dot" style="background: var(--silver)"></div><span>Silver</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="rsvp">
+        <div class="section-inner">
+          <div class="section-head" data-aos="fade-up" data-aos-duration="900">
+            <div class="kicker">Kindly respond</div>
+            <h2 class="h2">RSVP Required</h2>
+            <p class="lead">
+              As seating and catering arrangements are strictly limited and reserved for confirmed guests only, we kindly ask that you respond on or before:
+              <strong>RSVP Deadline: August 4, 2026</strong>
+            </p>
+          </div>
+
+          <div class="rsvp-grid">
+            <div class="glass-panel" data-aos="fade-up" data-aos-duration="900" data-aos-delay="70">
+              <div class="contact-list">
+                <div>
+                  <h3>Important Note</h3>
+                  <p class="lead" style="margin-top: 8px">
+                    Please note that attendance will be honored only for guests who have confirmed their participation. We respectfully request that no additional guests accompany invitees unless previously approved by the hosts. Your prompt response will greatly assist us in making the necessary preparations for a memorable and enjoyable evening for everyone.
+                  </p>
+                </div>
+                <div>
+                  <h3>Contact Information</h3>
+                  <div class="contact-card" style="margin-top: 12px">
+                    <strong>Felimon Mamuad</strong>
+                    <div class="contact-row"><i class="fa-solid fa-phone"></i><span>CP#: 16476084117</span></div>
+                    <div class="contact-row"><i class="fa-regular fa-envelope"></i><span>Email: mon.mamuad@gmail.com</span></div>
+                  </div>
+                  <div class="contact-card" style="margin-top: 12px">
+                    <strong>Ludy Galicinao</strong>
+                    <div class="contact-row"><i class="fa-solid fa-phone"></i><span>CP#: 16479882122</span></div>
+                    <div class="contact-row"><i class="fa-regular fa-envelope"></i><span>Email: lscgalicinao@gmail.com</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="glass-panel" data-aos="fade-up" data-aos-duration="900" data-aos-delay="110">
+              <form id="rsvpForm" novalidate>
+                <div class="field">
+                  <label for="name">Name</label>
+                  <input class="control" id="name" name="name" type="text" autocomplete="name" required />
+                  <div class="error" id="err-name"></div>
+                </div>
+
+                <div class="field">
+                  <label for="contactNumber">Contact Number</label>
+                  <input class="control" id="contactNumber" name="contactNumber" type="tel" inputmode="tel" autocomplete="tel" required />
+                  <div class="error" id="err-contactNumber"></div>
+                </div>
+
+                <div class="field">
+                  <label for="email">Email</label>
+                  <input class="control" id="email" name="email" type="email" autocomplete="email" required />
+                  <div class="error" id="err-email"></div>
+                </div>
+
+                <div class="field">
+                  <label for="attendance">Attendance</label>
+                  <select class="control" id="attendance" name="attendance" required>
+                    <option value="" selected disabled>Select...</option>
+                    <option value="yes">Yes, I will attend</option>
+                    <option value="no">No, I cannot attend</option>
+                  </select>
+                  <div class="error" id="err-attendance"></div>
+                </div>
+
+                <div class="field">
+                  <label for="message">Message</label>
+                  <textarea class="control" id="message" name="message" rows="4" placeholder="Leave a short note..."></textarea>
+                  <div class="error" id="err-message"></div>
+                </div>
+
+                <div class="form-actions">
+                  <button class="btn btn-primary" type="submit">
+                    Submit RSVP
+                    <i class="fa-solid fa-paper-plane"></i>
+                  </button>
+                  <a class="btn btn-ghost" href="#top">
+                    Back to Top
+                    <i class="fa-solid fa-arrow-up"></i>
+                  </a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="quote" id="closing">
+        <div class="quote-inner">
+          <div class="glass-panel quote-card" data-aos="fade-up" data-aos-duration="900">
+            <p class="quote-text">
+              “Every chapter tells a story, and every story is made meaningful by the people who become part of it.
+              <br />
+              Thank you for being part of Precious's journey. We look forward to celebrating this unforgettable milestone with you.”
+            </p>
+            <div class="quote-sign">
+              With Love and Gratitude,<span>The Mamuad Family ❤️</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner" data-aos="fade-up" data-aos-duration="900">
+        <div class="mono">PZM</div>
+        <div class="socials" aria-label="Social media links">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+        <div class="foot-meta">© 2026 • All Rights Reserved</div>
+      </div>
+    </footer>
+
+    <button class="to-top" id="toTop" type="button" aria-label="Back to top" data-visible="false">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <div class="toast" id="toast" role="status" aria-live="polite" data-show="false">
+      <strong id="toastTitle">RSVP Received</strong>
+      <p id="toastBody">Thank you. Your response has been noted.</p>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/pqina/flip/dist/flip.min.js"></script>
+    <script>
+      const $ = (sel, root = document) => root.querySelector(sel)
+      const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel))
+
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+
+      window.handleTickInit = (tick) => {
+        const counter = Tick.count.down("2026-08-22T17:00:00-04:00")
+        counter.onupdate = (value) => {
+          tick.value = value
+        }
+      }
+
+      const loadingEl = $("#loading")
+      window.addEventListener("load", () => {
+        window.setTimeout(() => {
+          loadingEl.setAttribute("data-state", "hidden")
+        }, 650)
+      })
+
+      if (window.AOS) {
+        AOS.init({
+          duration: 850,
+          easing: "ease-out-cubic",
+          once: true,
+          offset: 80,
+        })
+      }
+
+      const nav = $("#nav")
+      const toTop = $("#toTop")
+      const revealNavAt = 80
+      const revealTopAt = 520
+
+      const onScrollUI = () => {
+        const y = window.scrollY || 0
+        nav.dataset.visible = y > revealNavAt ? "true" : "false"
+        toTop.dataset.visible = y > revealTopAt ? "true" : "false"
+      }
+      window.addEventListener("scroll", onScrollUI, { passive: true })
+      onScrollUI()
+
+      toTop.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: prefersReducedMotion ? "auto" : "smooth" })
+      })
+
+      const toast = $("#toast")
+      const toastTitle = $("#toastTitle")
+      const toastBody = $("#toastBody")
+      let toastTimer = 0
+      const showToast = (title, body) => {
+        toastTitle.textContent = title
+        toastBody.textContent = body
+        toast.dataset.show = "true"
+        window.clearTimeout(toastTimer)
+        toastTimer = window.setTimeout(() => {
+          toast.dataset.show = "false"
+        }, 5200)
+      }
+
+      const normalizeContact = (val) => val.trim().replace(/\s+/g, "")
+      const isValidPhone = (val) => /^\+?[0-9]{7,15}$/.test(normalizeContact(val))
+      const isValidEmail = (val) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i.test(val.trim())
+
+      const rsvpForm = $("#rsvpForm")
+      const fields = {
+        name: $("#name"),
+        contactNumber: $("#contactNumber"),
+        email: $("#email"),
+        attendance: $("#attendance"),
+        message: $("#message"),
+      }
+
+      const setError = (key, message) => {
+        const el = fields[key]
+        const err = $(`#err-${key}`)
+        if (!el || !err) return
+        err.textContent = message || ""
+        el.setAttribute("aria-invalid", message ? "true" : "false")
+      }
+
+      const validate = () => {
+        let ok = true
+
+        const name = fields.name.value.trim()
+        if (!name) {
+          ok = false
+          setError("name", "Please enter your name.")
+        } else {
+          setError("name", "")
+        }
+
+        const contact = fields.contactNumber.value
+        if (!contact.trim()) {
+          ok = false
+          setError("contactNumber", "Please enter your contact number.")
+        } else if (!isValidPhone(contact)) {
+          ok = false
+          setError("contactNumber", "Please enter a valid number (digits, optional +).")
+        } else {
+          setError("contactNumber", "")
+        }
+
+        const email = fields.email.value.trim()
+        if (!email) {
+          ok = false
+          setError("email", "Please enter your email.")
+        } else if (!isValidEmail(email)) {
+          ok = false
+          setError("email", "Please enter a valid email address.")
+        } else {
+          setError("email", "")
+        }
+
+        const attendance = fields.attendance.value
+        if (!attendance) {
+          ok = false
+          setError("attendance", "Please select your attendance.")
+        } else {
+          setError("attendance", "")
+        }
+
+        return ok
+      }
+
+      Object.entries(fields).forEach(([k, el]) => {
+        el.addEventListener("input", () => {
+          if (el.getAttribute("aria-invalid") === "true") validate()
+        })
+        el.addEventListener("blur", () => validate())
+      })
+
+      rsvpForm.addEventListener("submit", (e) => {
+        e.preventDefault()
+        if (!validate()) {
+          showToast("RSVP Incomplete", "Please review the highlighted fields.")
+          const firstInvalid = $(`[aria-invalid="true"]`, rsvpForm)
+          if (firstInvalid) firstInvalid.focus()
+          return
+        }
+
+        const payload = {
+          name: fields.name.value.trim(),
+          contactNumber: normalizeContact(fields.contactNumber.value),
+          email: fields.email.value.trim(),
+          attendance: fields.attendance.value,
+          message: fields.message.value.trim(),
+          submittedAtISO: new Date().toISOString(),
+        }
+
+        const goingText = payload.attendance === "yes" ? "We can’t wait to celebrate with you." : "Thank you for letting us know."
+        showToast("RSVP Received", goingText)
+        rsvpForm.reset()
+        Object.keys(fields).forEach((k) => setError(k, ""))
+      })
+
+      const canvas = $("#particles")
+      const ctx = canvas.getContext("2d")
+
+      const particleState = {
+        w: 0,
+        h: 0,
+        dpr: Math.min(2, window.devicePixelRatio || 1),
+        particles: [],
+      }
+
+      const resizeCanvas = () => {
+        particleState.w = window.innerWidth
+        particleState.h = window.innerHeight
+        canvas.width = Math.floor(particleState.w * particleState.dpr)
+        canvas.height = Math.floor(particleState.h * particleState.dpr)
+        canvas.style.width = `${particleState.w}px`
+        canvas.style.height = `${particleState.h}px`
+        ctx.setTransform(particleState.dpr, 0, 0, particleState.dpr, 0, 0)
+      }
+
+      const rand = (min, max) => Math.random() * (max - min) + min
+
+      const seedParticles = () => {
+        const count = Math.floor(Math.min(78, Math.max(36, particleState.w / 20)))
+        particleState.particles = Array.from({ length: count }, () => ({
+          x: rand(0, particleState.w),
+          y: rand(0, particleState.h),
+          r: rand(0.8, 2.4),
+          vx: rand(-0.25, 0.25),
+          vy: rand(-0.22, 0.22),
+          a: rand(0.08, 0.22),
+          hue: rand(22, 44),
+        }))
+      }
+
+      const drawParticles = () => {
+        ctx.clearRect(0, 0, particleState.w, particleState.h)
+        ctx.globalCompositeOperation = "lighter"
+
+        for (const p of particleState.particles) {
+          p.x += p.vx
+          p.y += p.vy
+          if (p.x < -30) p.x = particleState.w + 30
+          if (p.x > particleState.w + 30) p.x = -30
+          if (p.y < -30) p.y = particleState.h + 30
+          if (p.y > particleState.h + 30) p.y = -30
+
+          const grad = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r * 14)
+          grad.addColorStop(0, `hsla(${p.hue}, 70%, 70%, ${p.a})`)
+          grad.addColorStop(1, "rgba(0,0,0,0)")
+          ctx.fillStyle = grad
+          ctx.beginPath()
+          ctx.arc(p.x, p.y, p.r * 14, 0, Math.PI * 2)
+          ctx.fill()
+        }
+
+        ctx.globalCompositeOperation = "source-over"
+      }
+
+      let raf = 0
+      const animateParticles = () => {
+        if (!prefersReducedMotion) drawParticles()
+        raf = requestAnimationFrame(animateParticles)
+      }
+
+      const initParticles = () => {
+        if (!ctx) return
+        resizeCanvas()
+        seedParticles()
+        cancelAnimationFrame(raf)
+        animateParticles()
+      }
+
+      initParticles()
+      window.addEventListener(
+        "resize",
+        () => {
+          resizeCanvas()
+          seedParticles()
+        },
+        { passive: true }
+      )
+    </script>
+  </body>
+</html>

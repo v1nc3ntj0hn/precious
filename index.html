@@ -429,12 +429,20 @@
         line-height: 1.55;
       }
 
+      .meta-line.meta-line--single {
+        align-items: center;
+      }
+
       .meta-line i {
         color: rgba(247, 231, 206, 0.9);
         margin-top: 3px;
         width: 20px;
         text-align: center;
         filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.28));
+      }
+
+      .meta-line.meta-line--single i {
+        margin-top: 0;
       }
 
       .hero-actions {
@@ -467,6 +475,13 @@
         color: rgba(42, 31, 30, 0.92);
         background: linear-gradient(135deg, rgba(247, 231, 206, 0.95), rgba(244, 194, 194, 0.78));
         box-shadow: 0 16px 44px rgba(0, 0, 0, 0.26);
+      }
+
+      .btn-waze {
+        color: rgba(42, 31, 30, 0.92);
+        border: 1px solid rgba(183, 110, 121, 0.28);
+        background: linear-gradient(135deg, rgba(207, 242, 255, 0.92), rgba(247, 231, 206, 0.84));
+        box-shadow: 0 16px 44px rgba(0, 0, 0, 0.18);
       }
 
       .btn-primary::after {
@@ -565,7 +580,7 @@
 
       .lead {
         margin: 0;
-        max-width: 64ch;
+        max-width: 80ch;
         color: rgba(42, 31, 30, 0.76);
         line-height: 1.8;
         font-size: 15px;
@@ -704,7 +719,7 @@
         margin: 0;
         color: rgba(42, 31, 30, 0.76);
         line-height: 1.8;
-        font-size: 14px;
+        font-size: 18px;
         position: relative;
       }
 
@@ -882,39 +897,53 @@
         border: 1px solid rgba(183, 110, 121, 0.2);
         background: rgba(255, 255, 255, 0.6);
         padding: 12px 12px;
-        display: flex;
+        display: grid;
+        grid-template-columns: 26px 1fr;
         align-items: center;
-        justify-content: space-between;
         gap: 12px;
         box-shadow: 0 14px 34px rgba(18, 12, 12, 0.08);
+        overflow: hidden;
       }
 
       .swatch .dot {
         width: 26px;
         height: 26px;
+        flex: 0 0 26px;
         border-radius: 999px;
         border: 1px solid rgba(18, 12, 12, 0.12);
         box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 0.32), 0 10px 18px rgba(18, 12, 12, 0.12);
       }
 
       .swatch span {
-        font-size: 12px;
-        letter-spacing: 0.12em;
+        flex: 1;
+        text-align: center;
+        min-width: 0;
+        font-size: 8px;
+        line-height: 1.15;
+        letter-spacing: 0.08em;
         text-transform: uppercase;
-        color: rgba(42, 31, 30, 0.78);
+        color: rgba(42, 31, 30, 0.86);
       }
 
       .rsvp-grid {
         display: grid;
         gap: 16px;
+        max-width: 860px;
+        margin: 0 auto;
       }
 
       @media (min-width: 980px) {
         .rsvp-grid {
-          grid-template-columns: 0.95fr 1.05fr;
+          grid-template-columns: minmax(0, 1fr);
           gap: 20px;
           align-items: start;
         }
+      }
+
+      #rsvp .section-head {
+        max-width: 860px;
+        margin-left: auto;
+        margin-right: auto;
       }
 
       .contact-list {
@@ -1259,8 +1288,8 @@
       <section class="hero" id="top">
         <div class="hero-media" aria-hidden="true">
           <img
-            src="https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=ultra%20realistic%20studio%20portrait%20of%20a%20beautiful%20elegant%20Filipina%20debutante%2C%20blush%20pink%20evening%20gown%2C%20champagne%20gold%20rim%20light%2C%20high%20fashion%20editorial%2C%2085mm%20lens%2C%20soft%20bokeh%2C%20luxury%20beauty%20photography%2C%20clean%20background%2C%20sharp%20focus%2C%20natural%20skin%20tones&image_size=portrait_16_9"
-            alt="Portrait of the debutante (placeholder image)"
+            src="img01.png"
+            alt="Portrait of the debutante"
             loading="eager"
           />
           <div class="hero-shimmer"></div>
@@ -1269,11 +1298,12 @@
         <div class="hero-inner">
           <div class="hero-card" data-aos="fade-up" data-aos-duration="900">
             <h1 class="hero-title">
-              The Eighteenth Chapter of <em>Precious Ziara Mamuad</em>:
+              The Eighteenth Chapter of <br>
+              <span><em>Precious Ziara Mamuad</em></span>
               <br />
               A Night of Elegance, Dreams, and New Beginnings
             </h1>
-            <p class="hero-subtitle">PRECIOUS ZIARA L. MAMUAD</p>
+            <!-- <p class="hero-subtitle">PRECIOUS ZIARA L. MAMUAD</p> -->
 
             <div class="hero-meta">
               <strong>August 22, 2026 • 5:00 PM</strong>
@@ -1288,9 +1318,9 @@
                     Scarborough, Ontario M1M 1R5
                   </span>
                 </div>
-                <div class="meta-line">
-                  <i class="fa-solid fa-sparkles"></i>
-                  <span>Elegant, modern, feminine, and sophisticated</span>
+                <div class="meta-line meta-line--single">
+                  <!-- <i class="fa-solid fa-wand-magic-sparkles"></i> -->
+                  <!-- <span>Elegant, modern, feminine, and sophisticated</span> -->
                 </div>
               </div>
             </div>
@@ -1323,8 +1353,8 @@
             <div class="welcome-grid">
               <div class="portrait" aria-hidden="false">
                 <img
-                  src="https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=ultra%20realistic%20editorial%20portrait%20of%20a%20Filipina%20debutante%20in%20rose%20gold%20gown%2C%20soft%20ivory%20studio%20background%2C%20beauty%20lighting%2C%20high-end%20magazine%20style%2C%2085mm%2C%20shallow%20depth%20of%20field%2C%20luxury%20photography&image_size=portrait_16_9"
-                  alt="Debutante portrait (placeholder image)"
+                  src="img01.png"
+                  alt="Portrait of the debutante"
                   loading="lazy"
                 />
               </div>
@@ -1409,8 +1439,17 @@
               Open in Maps
               <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </a>
+            <a
+              class="btn btn-waze"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://waze.com/ul?q=3474%20Kingston%20Rd%2C%20Scarborough%2C%20Ontario%20M1M%201R5&navigate=yes"
+            >
+              Waze
+              <i class="fa-brands fa-waze"></i>
+            </a>
             <a class="btn btn-ghost" href="#rsvp">
-              RSVP Required
+              RSVP Details
               <i class="fa-solid fa-clipboard-check"></i>
             </a>
           </div>
@@ -1485,7 +1524,7 @@
         <div class="section-inner">
           <div class="section-head" data-aos="fade-up" data-aos-duration="900">
             <div class="kicker">Kindly respond</div>
-            <h2 class="h2">RSVP Required</h2>
+            <h2 class="h2">RSVP Details</h2>
             <p class="lead">
               As seating and catering arrangements are strictly limited and reserved for confirmed guests only, we kindly ask that you respond on or before:
               <strong>RSVP Deadline: August 4, 2026</strong>
@@ -1516,55 +1555,6 @@
                 </div>
               </div>
             </div>
-
-            <div class="glass-panel" data-aos="fade-up" data-aos-duration="900" data-aos-delay="110">
-              <form id="rsvpForm" novalidate>
-                <div class="field">
-                  <label for="name">Name</label>
-                  <input class="control" id="name" name="name" type="text" autocomplete="name" required />
-                  <div class="error" id="err-name"></div>
-                </div>
-
-                <div class="field">
-                  <label for="contactNumber">Contact Number</label>
-                  <input class="control" id="contactNumber" name="contactNumber" type="tel" inputmode="tel" autocomplete="tel" required />
-                  <div class="error" id="err-contactNumber"></div>
-                </div>
-
-                <div class="field">
-                  <label for="email">Email</label>
-                  <input class="control" id="email" name="email" type="email" autocomplete="email" required />
-                  <div class="error" id="err-email"></div>
-                </div>
-
-                <div class="field">
-                  <label for="attendance">Attendance</label>
-                  <select class="control" id="attendance" name="attendance" required>
-                    <option value="" selected disabled>Select...</option>
-                    <option value="yes">Yes, I will attend</option>
-                    <option value="no">No, I cannot attend</option>
-                  </select>
-                  <div class="error" id="err-attendance"></div>
-                </div>
-
-                <div class="field">
-                  <label for="message">Message</label>
-                  <textarea class="control" id="message" name="message" rows="4" placeholder="Leave a short note..."></textarea>
-                  <div class="error" id="err-message"></div>
-                </div>
-
-                <div class="form-actions">
-                  <button class="btn btn-primary" type="submit">
-                    Submit RSVP
-                    <i class="fa-solid fa-paper-plane"></i>
-                  </button>
-                  <a class="btn btn-ghost" href="#top">
-                    Back to Top
-                    <i class="fa-solid fa-arrow-up"></i>
-                  </a>
-                </div>
-              </form>
-            </div>
           </div>
         </div>
       </section>
@@ -1588,12 +1578,12 @@
     <footer>
       <div class="footer-inner" data-aos="fade-up" data-aos-duration="900">
         <div class="mono">PZM</div>
-        <div class="socials" aria-label="Social media links">
+        <!-- <div class="socials" aria-label="Social media links">
           <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
           <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
           <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
           <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-        </div>
+        </div> -->
         <div class="foot-meta">© 2026 • All Rights Reserved</div>
       </div>
     </footer>
@@ -1668,102 +1658,6 @@
           toast.dataset.show = "false"
         }, 5200)
       }
-
-      const normalizeContact = (val) => val.trim().replace(/\s+/g, "")
-      const isValidPhone = (val) => /^\+?[0-9]{7,15}$/.test(normalizeContact(val))
-      const isValidEmail = (val) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i.test(val.trim())
-
-      const rsvpForm = $("#rsvpForm")
-      const fields = {
-        name: $("#name"),
-        contactNumber: $("#contactNumber"),
-        email: $("#email"),
-        attendance: $("#attendance"),
-        message: $("#message"),
-      }
-
-      const setError = (key, message) => {
-        const el = fields[key]
-        const err = $(`#err-${key}`)
-        if (!el || !err) return
-        err.textContent = message || ""
-        el.setAttribute("aria-invalid", message ? "true" : "false")
-      }
-
-      const validate = () => {
-        let ok = true
-
-        const name = fields.name.value.trim()
-        if (!name) {
-          ok = false
-          setError("name", "Please enter your name.")
-        } else {
-          setError("name", "")
-        }
-
-        const contact = fields.contactNumber.value
-        if (!contact.trim()) {
-          ok = false
-          setError("contactNumber", "Please enter your contact number.")
-        } else if (!isValidPhone(contact)) {
-          ok = false
-          setError("contactNumber", "Please enter a valid number (digits, optional +).")
-        } else {
-          setError("contactNumber", "")
-        }
-
-        const email = fields.email.value.trim()
-        if (!email) {
-          ok = false
-          setError("email", "Please enter your email.")
-        } else if (!isValidEmail(email)) {
-          ok = false
-          setError("email", "Please enter a valid email address.")
-        } else {
-          setError("email", "")
-        }
-
-        const attendance = fields.attendance.value
-        if (!attendance) {
-          ok = false
-          setError("attendance", "Please select your attendance.")
-        } else {
-          setError("attendance", "")
-        }
-
-        return ok
-      }
-
-      Object.entries(fields).forEach(([k, el]) => {
-        el.addEventListener("input", () => {
-          if (el.getAttribute("aria-invalid") === "true") validate()
-        })
-        el.addEventListener("blur", () => validate())
-      })
-
-      rsvpForm.addEventListener("submit", (e) => {
-        e.preventDefault()
-        if (!validate()) {
-          showToast("RSVP Incomplete", "Please review the highlighted fields.")
-          const firstInvalid = $(`[aria-invalid="true"]`, rsvpForm)
-          if (firstInvalid) firstInvalid.focus()
-          return
-        }
-
-        const payload = {
-          name: fields.name.value.trim(),
-          contactNumber: normalizeContact(fields.contactNumber.value),
-          email: fields.email.value.trim(),
-          attendance: fields.attendance.value,
-          message: fields.message.value.trim(),
-          submittedAtISO: new Date().toISOString(),
-        }
-
-        const goingText = payload.attendance === "yes" ? "We can’t wait to celebrate with you." : "Thank you for letting us know."
-        showToast("RSVP Received", goingText)
-        rsvpForm.reset()
-        Object.keys(fields).forEach((k) => setError(k, ""))
-      })
 
       const canvas = $("#particles")
       const ctx = canvas.getContext("2d")

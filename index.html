@@ -312,6 +312,12 @@
         filter: contrast(1.02) saturate(1.04);
       }
 
+      @media (min-width: 900px) {
+        .hero-media img {
+          object-position: 50% 15%;
+        }
+      }
+
       .hero-media::after {
         content: "";
         position: absolute;
@@ -1276,10 +1282,10 @@
       </div>
       <nav class="nav-links">
         <a href="#welcome">Welcome</a>
-        <a href="#details">Details</a>
         <a href="#countdown">Countdown</a>
         <a href="#dresscode">Dress Code</a>
         <a href="#rsvp">RSVP</a>
+        <a href="#details">Details</a>
       </nav>
       <a class="nav-cta" href="#rsvp"><i class="fa-solid fa-envelope-open-text"></i> RSVP</a>
     </header>
@@ -1384,78 +1390,6 @@
         </div>
       </section>
 
-      <section class="section" id="details">
-        <div class="section-inner">
-          <div class="section-head" data-aos="fade-up" data-aos-duration="900">
-            <div class="kicker">Save the date</div>
-            <h2 class="h2">Event Details</h2>
-            <p class="lead">Everything you need for a seamless evening of elegance.</p>
-          </div>
-
-          <div class="details-grid" data-aos="fade-up" data-aos-duration="900" data-aos-delay="80">
-            <article class="card">
-              <h3>Date</h3>
-              <div class="detail-row">
-                <i class="fa-regular fa-calendar"></i>
-                <p>August 22, 2026</p>
-              </div>
-            </article>
-            <article class="card">
-              <h3>Time</h3>
-              <div class="detail-row">
-                <i class="fa-regular fa-clock"></i>
-                <p>5:00 PM</p>
-              </div>
-            </article>
-            <article class="card">
-              <h3>Venue</h3>
-              <div class="detail-row">
-                <i class="fa-solid fa-location-dot"></i>
-                <p>
-                  QSSIS Banquet Hall<br />
-                  3474 Kingston Rd.<br />
-                  Scarborough, Ontario M1M 1R5
-                </p>
-              </div>
-            </article>
-          </div>
-
-          <div class="map-wrap" data-aos="fade-up" data-aos-duration="900" data-aos-delay="120">
-            <iframe
-              title="Map to QSSIS Banquet Hall"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps?q=3474%20Kingston%20Rd%2C%20Scarborough%2C%20Ontario%20M1M%201R5&output=embed"
-            ></iframe>
-          </div>
-
-          <div class="map-actions" data-aos="fade-up" data-aos-duration="900" data-aos-delay="150">
-            <a
-              class="btn btn-primary"
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://www.google.com/maps/search/?api=1&query=3474%20Kingston%20Rd%2C%20Scarborough%2C%20Ontario%20M1M%201R5"
-            >
-              Open in Maps
-              <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            </a>
-            <a
-              class="btn btn-waze"
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://waze.com/ul?q=3474%20Kingston%20Rd%2C%20Scarborough%2C%20Ontario%20M1M%201R5&navigate=yes"
-            >
-              Waze
-              <i class="fa-brands fa-waze"></i>
-            </a>
-            <a class="btn btn-ghost" href="#rsvp">
-              RSVP Details
-              <i class="fa-solid fa-clipboard-check"></i>
-            </a>
-          </div>
-        </div>
-      </section>
-
       <section class="section" id="countdown">
         <div class="section-inner">
           <div class="section-head" data-aos="fade-up" data-aos-duration="900">
@@ -1555,6 +1489,78 @@
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="details">
+        <div class="section-inner">
+          <div class="section-head" data-aos="fade-up" data-aos-duration="900">
+            <div class="kicker">Save the date</div>
+            <h2 class="h2">Event Details</h2>
+            <p class="lead">Everything you need for a seamless evening of elegance.</p>
+          </div>
+
+          <div class="details-grid" data-aos="fade-up" data-aos-duration="900" data-aos-delay="80">
+            <article class="card">
+              <h3>Date</h3>
+              <div class="detail-row">
+                <i class="fa-regular fa-calendar"></i>
+                <p>August 22, 2026</p>
+              </div>
+            </article>
+            <article class="card">
+              <h3>Time</h3>
+              <div class="detail-row">
+                <i class="fa-regular fa-clock"></i>
+                <p>5:00 PM</p>
+              </div>
+            </article>
+            <article class="card">
+              <h3>Venue</h3>
+              <div class="detail-row">
+                <i class="fa-solid fa-location-dot"></i>
+                <p>
+                  QSSIS Banquet Hall<br />
+                  3474 Kingston Rd.<br />
+                  Scarborough, Ontario M1M 1R5
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <div class="map-wrap" data-aos="fade-up" data-aos-duration="900" data-aos-delay="120">
+            <iframe
+              title="Map to QSSIS Banquet Hall"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=3474%20Kingston%20Rd%2C%20Scarborough%2C%20Ontario%20M1M%201R5&output=embed"
+            ></iframe>
+          </div>
+
+          <div class="map-actions" data-aos="fade-up" data-aos-duration="900" data-aos-delay="150">
+            <a
+              class="btn btn-primary"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.google.com/maps/search/?api=1&query=3474%20Kingston%20Rd%2C%20Scarborough%2C%20Ontario%20M1M%201R5"
+            >
+              Open in Maps
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+            <a
+              class="btn btn-waze"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://waze.com/ul?q=3474%20Kingston%20Rd%2C%20Scarborough%2C%20Ontario%20M1M%201R5&navigate=yes"
+            >
+              Waze
+              <i class="fa-brands fa-waze"></i>
+            </a>
+            <a class="btn btn-ghost" href="#rsvp">
+              RSVP Details
+              <i class="fa-solid fa-clipboard-check"></i>
+            </a>
           </div>
         </div>
       </section>

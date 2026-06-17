@@ -20,7 +20,10 @@
     />
 
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/pqina/flip/dist/flip.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/pqina/flip/dist/flip.min.css"
+    />
 
     <style>
       :root {
@@ -60,10 +63,28 @@
       body {
         margin: 0;
         color: var(--ink);
-        font-family: "Montserrat", system-ui, -apple-system, Segoe UI, sans-serif;
-        background: radial-gradient(1200px 700px at 15% -10%, rgba(244, 194, 194, 0.55), transparent 58%),
-          radial-gradient(900px 560px at 90% 6%, rgba(247, 231, 206, 0.72), transparent 60%),
-          radial-gradient(900px 700px at 50% 100%, rgba(183, 110, 121, 0.18), transparent 56%),
+        font-family:
+          "Montserrat",
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          sans-serif;
+        background:
+          radial-gradient(
+            1200px 700px at 15% -10%,
+            rgba(244, 194, 194, 0.55),
+            transparent 58%
+          ),
+          radial-gradient(
+            900px 560px at 90% 6%,
+            rgba(247, 231, 206, 0.72),
+            transparent 60%
+          ),
+          radial-gradient(
+            900px 700px at 50% 100%,
+            rgba(183, 110, 121, 0.18),
+            transparent 56%
+          ),
           linear-gradient(180deg, #fff 0%, var(--beige) 100%);
         overflow-x: hidden;
       }
@@ -107,8 +128,15 @@
         z-index: 9999;
         display: grid;
         place-items: center;
-        background: radial-gradient(800px 600px at 50% 15%, rgba(247, 231, 206, 0.85), rgba(245, 240, 230, 0.92) 55%, rgba(255, 255, 255, 0.94));
-        transition: opacity 900ms var(--ease), visibility 900ms var(--ease);
+        background: radial-gradient(
+          800px 600px at 50% 15%,
+          rgba(247, 231, 206, 0.85),
+          rgba(245, 240, 230, 0.92) 55%,
+          rgba(255, 255, 255, 0.94)
+        );
+        transition:
+          opacity 900ms var(--ease),
+          visibility 900ms var(--ease);
       }
 
       .loading[data-state="hidden"] {
@@ -121,7 +149,11 @@
         padding: 32px 28px;
         border-radius: 30px;
         border: 1px solid rgba(183, 110, 121, 0.22);
-        background: linear-gradient(145deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.24));
+        background: linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.6),
+          rgba(255, 255, 255, 0.24)
+        );
         backdrop-filter: blur(14px);
         box-shadow: var(--shadow);
         text-align: center;
@@ -133,7 +165,12 @@
         content: "";
         position: absolute;
         inset: -120px -60px;
-        background: linear-gradient(120deg, transparent 44%, rgba(247, 231, 206, 0.85) 52%, transparent 60%);
+        background: linear-gradient(
+          120deg,
+          transparent 44%,
+          rgba(247, 231, 206, 0.85) 52%,
+          transparent 60%
+        );
         transform: translateX(-38%);
         animation: shimmer 1.85s infinite linear;
         opacity: 0.55;
@@ -171,7 +208,13 @@
         inset: 0;
         width: 45%;
         border-radius: 999px;
-        background: linear-gradient(90deg, rgba(183, 110, 121, 0), rgba(183, 110, 121, 0.8), rgba(247, 231, 206, 0.9), rgba(183, 110, 121, 0));
+        background: linear-gradient(
+          90deg,
+          rgba(183, 110, 121, 0),
+          rgba(183, 110, 121, 0.8),
+          rgba(247, 231, 206, 0.9),
+          rgba(183, 110, 121, 0)
+        );
         animation: loadSlide 1.2s infinite var(--ease);
       }
 
@@ -206,12 +249,18 @@
         padding: 12px 14px;
         border-radius: 999px;
         border: 1px solid rgba(183, 110, 121, 0.2);
-        background: linear-gradient(145deg, rgba(255, 255, 255, 0.58), rgba(255, 255, 255, 0.12));
+        background: linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.58),
+          rgba(255, 255, 255, 0.12)
+        );
         backdrop-filter: blur(14px);
         box-shadow: 0 14px 38px rgba(18, 12, 12, 0.14);
         opacity: 0;
         pointer-events: none;
-        transition: opacity 520ms var(--ease), transform 520ms var(--ease);
+        transition:
+          opacity 520ms var(--ease),
+          transform 520ms var(--ease);
       }
 
       .nav[data-visible="true"] {
@@ -255,7 +304,9 @@
         color: rgba(42, 31, 30, 0.76);
         padding: 9px 10px;
         border-radius: 999px;
-        transition: background 260ms var(--ease), color 260ms var(--ease);
+        transition:
+          background 260ms var(--ease),
+          color 260ms var(--ease);
       }
 
       .nav-links a:hover {
@@ -270,13 +321,19 @@
         padding: 10px 14px;
         border-radius: 999px;
         border: 1px solid rgba(183, 110, 121, 0.3);
-        background: linear-gradient(135deg, rgba(247, 231, 206, 0.6), rgba(244, 194, 194, 0.26));
+        background: linear-gradient(
+          135deg,
+          rgba(247, 231, 206, 0.6),
+          rgba(244, 194, 194, 0.26)
+        );
         box-shadow: 0 10px 24px rgba(183, 110, 121, 0.18);
         font-size: 12px;
         letter-spacing: 0.12em;
         text-transform: uppercase;
         color: rgba(42, 31, 30, 0.9);
-        transition: transform 260ms var(--ease), box-shadow 260ms var(--ease);
+        transition:
+          transform 260ms var(--ease),
+          box-shadow 260ms var(--ease);
       }
 
       .nav-cta:hover {
@@ -323,16 +380,34 @@
         position: absolute;
         inset: -60px -40px;
         background:
-          radial-gradient(700px 550px at 20% 26%, rgba(247, 231, 206, 0.48), transparent 60%),
-          radial-gradient(800px 650px at 80% 18%, rgba(244, 194, 194, 0.38), transparent 62%),
-          linear-gradient(180deg, rgba(15, 10, 10, 0.66) 0%, rgba(15, 10, 10, 0.32) 46%, rgba(245, 240, 230, 0.22) 100%);
+          radial-gradient(
+            700px 550px at 20% 26%,
+            rgba(247, 231, 206, 0.48),
+            transparent 60%
+          ),
+          radial-gradient(
+            800px 650px at 80% 18%,
+            rgba(244, 194, 194, 0.38),
+            transparent 62%
+          ),
+          linear-gradient(
+            180deg,
+            rgba(15, 10, 10, 0.66) 0%,
+            rgba(15, 10, 10, 0.32) 46%,
+            rgba(245, 240, 230, 0.22) 100%
+          );
         mix-blend-mode: multiply;
       }
 
       .hero-shimmer {
         position: absolute;
         inset: -50% -20%;
-        background: linear-gradient(120deg, transparent 48%, rgba(247, 231, 206, 0.68) 52%, transparent 58%);
+        background: linear-gradient(
+          120deg,
+          transparent 48%,
+          rgba(247, 231, 206, 0.68) 52%,
+          transparent 58%
+        );
         transform: translateX(-48%) rotate(8deg);
         animation: heroSweep 5.2s infinite linear;
         opacity: 0.62;
@@ -361,7 +436,11 @@
         padding: 22px 18px;
         border-radius: var(--radius-xl);
         border: 1px solid rgba(247, 231, 206, 0.28);
-        background: linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.08));
+        background: linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.2),
+          rgba(255, 255, 255, 0.08)
+        );
         backdrop-filter: blur(18px);
         box-shadow: 0 22px 70px rgba(8, 5, 5, 0.38);
         position: relative;
@@ -372,8 +451,17 @@
         content: "";
         position: absolute;
         inset: 0;
-        background: radial-gradient(500px 240px at 10% 12%, rgba(247, 231, 206, 0.28), transparent 58%),
-          radial-gradient(420px 260px at 92% 0%, rgba(244, 194, 194, 0.22), transparent 58%);
+        background:
+          radial-gradient(
+            500px 240px at 10% 12%,
+            rgba(247, 231, 206, 0.28),
+            transparent 58%
+          ),
+          radial-gradient(
+            420px 260px at 92% 0%,
+            rgba(244, 194, 194, 0.22),
+            transparent 58%
+          );
         opacity: 0.95;
         pointer-events: none;
       }
@@ -471,7 +559,10 @@
         letter-spacing: 0.14em;
         text-transform: uppercase;
         font-size: 12px;
-        transition: transform 260ms var(--ease), box-shadow 260ms var(--ease), background 260ms var(--ease);
+        transition:
+          transform 260ms var(--ease),
+          box-shadow 260ms var(--ease),
+          background 260ms var(--ease);
         position: relative;
         overflow: hidden;
         user-select: none;
@@ -479,14 +570,22 @@
 
       .btn-primary {
         color: rgba(42, 31, 30, 0.92);
-        background: linear-gradient(135deg, rgba(247, 231, 206, 0.95), rgba(244, 194, 194, 0.78));
+        background: linear-gradient(
+          135deg,
+          rgba(247, 231, 206, 0.95),
+          rgba(244, 194, 194, 0.78)
+        );
         box-shadow: 0 16px 44px rgba(0, 0, 0, 0.26);
       }
 
       .btn-waze {
         color: rgba(42, 31, 30, 0.92);
         border: 1px solid rgba(183, 110, 121, 0.28);
-        background: linear-gradient(135deg, rgba(207, 242, 255, 0.92), rgba(247, 231, 206, 0.84));
+        background: linear-gradient(
+          135deg,
+          rgba(207, 242, 255, 0.92),
+          rgba(247, 231, 206, 0.84)
+        );
         box-shadow: 0 16px 44px rgba(0, 0, 0, 0.18);
       }
 
@@ -494,7 +593,12 @@
         content: "";
         position: absolute;
         inset: -120px -40px;
-        background: linear-gradient(120deg, transparent 44%, rgba(255, 255, 255, 0.66) 52%, transparent 60%);
+        background: linear-gradient(
+          120deg,
+          transparent 44%,
+          rgba(255, 255, 255, 0.66) 52%,
+          transparent 60%
+        );
         transform: translateX(-58%) rotate(10deg);
         animation: btnSweep 2.8s infinite linear;
         opacity: 0.55;
@@ -573,7 +677,12 @@
         content: "";
         width: 42px;
         height: 1px;
-        background: linear-gradient(90deg, transparent, rgba(183, 110, 121, 0.6), transparent);
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(183, 110, 121, 0.6),
+          transparent
+        );
       }
 
       .h2 {
@@ -595,7 +704,11 @@
       .glass-panel {
         border-radius: var(--radius-xl);
         border: 1px solid rgba(183, 110, 121, 0.18);
-        background: linear-gradient(145deg, rgba(255, 255, 255, 0.64), rgba(255, 255, 255, 0.14));
+        background: linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.64),
+          rgba(255, 255, 255, 0.14)
+        );
         box-shadow: var(--shadow-soft);
         backdrop-filter: blur(18px);
         overflow: hidden;
@@ -607,8 +720,16 @@
         position: absolute;
         inset: 0;
         background:
-          radial-gradient(520px 260px at 10% 10%, rgba(247, 231, 206, 0.5), transparent 60%),
-          radial-gradient(540px 320px at 95% 15%, rgba(244, 194, 194, 0.46), transparent 64%);
+          radial-gradient(
+            520px 260px at 10% 10%,
+            rgba(247, 231, 206, 0.5),
+            transparent 60%
+          ),
+          radial-gradient(
+            540px 320px at 95% 15%,
+            rgba(244, 194, 194, 0.46),
+            transparent 64%
+          );
         opacity: 0.58;
         pointer-events: none;
       }
@@ -638,8 +759,17 @@
         content: "";
         position: absolute;
         inset: 0;
-        background: radial-gradient(420px 260px at 65% 22%, rgba(247, 231, 206, 0.32), transparent 65%),
-          linear-gradient(180deg, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.22) 100%);
+        background:
+          radial-gradient(
+            420px 260px at 65% 22%,
+            rgba(247, 231, 206, 0.32),
+            transparent 65%
+          ),
+          linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.08) 0%,
+            rgba(0, 0, 0, 0.22) 100%
+          );
         mix-blend-mode: soft-light;
       }
 
@@ -696,7 +826,11 @@
         padding: 18px 16px;
         border-radius: var(--radius-lg);
         border: 1px solid rgba(183, 110, 121, 0.18);
-        background: linear-gradient(145deg, rgba(255, 255, 255, 0.68), rgba(255, 255, 255, 0.18));
+        background: linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.68),
+          rgba(255, 255, 255, 0.18)
+        );
         backdrop-filter: blur(14px);
         box-shadow: 0 14px 34px rgba(18, 12, 12, 0.12);
         position: relative;
@@ -707,8 +841,17 @@
         content: "";
         position: absolute;
         inset: 0;
-        background: radial-gradient(420px 220px at 10% 10%, rgba(247, 231, 206, 0.62), transparent 60%),
-          radial-gradient(420px 240px at 90% 15%, rgba(244, 194, 194, 0.5), transparent 65%);
+        background:
+          radial-gradient(
+            420px 220px at 10% 10%,
+            rgba(247, 231, 206, 0.62),
+            transparent 60%
+          ),
+          radial-gradient(
+            420px 240px at 90% 15%,
+            rgba(244, 194, 194, 0.5),
+            transparent 65%
+          );
         opacity: 0.45;
         pointer-events: none;
       }
@@ -804,13 +947,22 @@
         padding: 10px 10px;
         border-radius: 20px;
         border: 1px solid rgba(183, 110, 121, 0.18);
-        background: linear-gradient(145deg, rgba(255, 255, 255, 0.66), rgba(255, 255, 255, 0.16));
-        box-shadow: 0 16px 42px rgba(18, 12, 12, 0.10);
+        background: linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.66),
+          rgba(255, 255, 255, 0.16)
+        );
+        box-shadow: 0 16px 42px rgba(18, 12, 12, 0.1);
         backdrop-filter: blur(14px);
       }
 
       .tick-label {
-        font-family: "Montserrat", system-ui, -apple-system, Segoe UI, sans-serif;
+        font-family:
+          "Montserrat",
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          sans-serif;
         font-size: 11px;
         letter-spacing: 0.22em;
         text-transform: uppercase;
@@ -876,7 +1028,11 @@
 
       .no-blue {
         border-color: rgba(183, 110, 121, 0.4);
-        background: linear-gradient(135deg, rgba(247, 231, 206, 0.7), rgba(244, 194, 194, 0.38));
+        background: linear-gradient(
+          135deg,
+          rgba(247, 231, 206, 0.7),
+          rgba(244, 194, 194, 0.38)
+        );
       }
 
       .swatches {
@@ -917,7 +1073,9 @@
         flex: 0 0 26px;
         border-radius: 999px;
         border: 1px solid rgba(18, 12, 12, 0.12);
-        box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 0.32), 0 10px 18px rgba(18, 12, 12, 0.12);
+        box-shadow:
+          inset 0 0 0 3px rgba(255, 255, 255, 0.32),
+          0 10px 18px rgba(18, 12, 12, 0.12);
       }
 
       .swatch span {
@@ -956,6 +1114,31 @@
         display: grid;
         gap: 14px;
         padding: 18px;
+      }
+
+      .rsvp-form-intro {
+        padding: 18px 18px 0;
+      }
+
+      .rsvp-form-intro h3 {
+        margin: 0 0 8px;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 24px;
+      }
+
+      .form-grid {
+        display: grid;
+        gap: 14px;
+      }
+
+      @media (min-width: 720px) {
+        .form-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .field-full {
+          grid-column: 1 / -1;
+        }
       }
 
       .contact-list h3 {
@@ -1030,7 +1213,11 @@
       .btn-messenger {
         color: rgba(42, 31, 30, 0.92);
         border: 1px solid rgba(183, 110, 121, 0.26);
-        background: linear-gradient(135deg, rgba(247, 231, 206, 0.9), rgba(255, 255, 255, 0.68));
+        background: linear-gradient(
+          135deg,
+          rgba(247, 231, 206, 0.9),
+          rgba(255, 255, 255, 0.68)
+        );
         box-shadow: 0 14px 34px rgba(0, 0, 0, 0.16);
       }
 
@@ -1060,12 +1247,19 @@
         font-size: 14px;
         color: rgba(42, 31, 30, 0.88);
         outline: none;
-        transition: border 240ms var(--ease), box-shadow 240ms var(--ease);
+        transition:
+          border 240ms var(--ease),
+          box-shadow 240ms var(--ease);
       }
 
       .control:focus {
         border-color: rgba(183, 110, 121, 0.5);
         box-shadow: 0 0 0 4px rgba(244, 194, 194, 0.28);
+      }
+
+      textarea.control {
+        min-height: 112px;
+        resize: vertical;
       }
 
       .control[aria-invalid="true"] {
@@ -1086,6 +1280,12 @@
         align-items: center;
       }
 
+      .btn[disabled] {
+        cursor: wait;
+        opacity: 0.68;
+        transform: none;
+      }
+
       .toast {
         position: fixed;
         bottom: 22px;
@@ -1095,7 +1295,11 @@
         width: min(520px, calc(100% - 44px));
         border-radius: 18px;
         border: 1px solid rgba(183, 110, 121, 0.22);
-        background: linear-gradient(145deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.2));
+        background: linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.78),
+          rgba(255, 255, 255, 0.2)
+        );
         backdrop-filter: blur(16px);
         box-shadow: var(--shadow);
         padding: 14px 14px;
@@ -1103,7 +1307,9 @@
         gap: 6px;
         opacity: 0;
         pointer-events: none;
-        transition: opacity 360ms var(--ease), transform 360ms var(--ease);
+        transition:
+          opacity 360ms var(--ease),
+          transform 360ms var(--ease);
       }
 
       .toast[data-show="true"] {
@@ -1136,10 +1342,26 @@
         position: absolute;
         inset: -80px -80px;
         background:
-          radial-gradient(900px 520px at 18% 10%, rgba(247, 231, 206, 0.78), transparent 60%),
-          radial-gradient(900px 600px at 90% 14%, rgba(244, 194, 194, 0.62), transparent 62%),
-          radial-gradient(900px 700px at 50% 100%, rgba(183, 110, 121, 0.22), transparent 64%),
-          linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(245, 240, 230, 0.92));
+          radial-gradient(
+            900px 520px at 18% 10%,
+            rgba(247, 231, 206, 0.78),
+            transparent 60%
+          ),
+          radial-gradient(
+            900px 600px at 90% 14%,
+            rgba(244, 194, 194, 0.62),
+            transparent 62%
+          ),
+          radial-gradient(
+            900px 700px at 50% 100%,
+            rgba(183, 110, 121, 0.22),
+            transparent 64%
+          ),
+          linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.82),
+            rgba(245, 240, 230, 0.92)
+          );
         filter: blur(1px);
         animation: breathe 9s infinite alternate ease-in-out;
       }
@@ -1231,7 +1453,10 @@
         display: grid;
         place-items: center;
         box-shadow: 0 14px 30px rgba(18, 12, 12, 0.08);
-        transition: transform 260ms var(--ease), box-shadow 260ms var(--ease), background 260ms var(--ease);
+        transition:
+          transform 260ms var(--ease),
+          box-shadow 260ms var(--ease),
+          background 260ms var(--ease);
       }
 
       .socials a:hover {
@@ -1249,7 +1474,11 @@
         height: 44px;
         border-radius: 999px;
         border: 1px solid rgba(183, 110, 121, 0.22);
-        background: linear-gradient(145deg, rgba(255, 255, 255, 0.76), rgba(255, 255, 255, 0.18));
+        background: linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.76),
+          rgba(255, 255, 255, 0.18)
+        );
         backdrop-filter: blur(14px);
         box-shadow: 0 18px 42px rgba(18, 12, 12, 0.14);
         cursor: pointer;
@@ -1258,7 +1487,9 @@
         opacity: 0;
         transform: translateY(10px);
         pointer-events: none;
-        transition: opacity 360ms var(--ease), transform 360ms var(--ease);
+        transition:
+          opacity 360ms var(--ease),
+          transform 360ms var(--ease);
       }
 
       .to-top[data-visible="true"] {
@@ -1315,7 +1546,12 @@
     <canvas id="particles" aria-hidden="true"></canvas>
     <div class="grain" aria-hidden="true"></div>
 
-    <header class="nav" id="nav" data-visible="false" aria-label="Invitation navigation">
+    <header
+      class="nav"
+      id="nav"
+      data-visible="false"
+      aria-label="Invitation navigation"
+    >
       <div class="nav-brand" aria-hidden="true">
         <strong>PZM</strong><span>Debut</span>
       </div>
@@ -1326,7 +1562,9 @@
         <a href="#rsvp">RSVP</a>
         <a href="#details">Details</a>
       </nav>
-      <a class="nav-cta" href="#rsvp"><i class="fa-solid fa-envelope-open-text"></i> RSVP</a>
+      <a class="nav-cta" href="#rsvp"
+        ><i class="fa-solid fa-envelope-open-text"></i> RSVP</a
+      >
     </header>
 
     <main>
@@ -1343,7 +1581,7 @@
         <div class="hero-inner">
           <div class="hero-card" data-aos="fade-up" data-aos-duration="900">
             <h1 class="hero-title">
-              The Eighteenth Chapter of <br>
+              The Eighteenth Chapter of <br />
               <span><em>Precious Ziara Mamuad</em></span>
               <br />
               A Night of Elegance, Dreams, and New Beginnings
@@ -1390,11 +1628,17 @@
             <div class="kicker">A warm welcome</div>
             <h2 class="h2">Welcome</h2>
             <p class="lead">
-              With profound gratitude to God and hearts filled with love, we warmly welcome you to this special celebration.
+              With profound gratitude to God and hearts filled with love, we
+              warmly welcome you to this special celebration.
             </p>
           </div>
 
-          <div class="glass-panel" data-aos="fade-up" data-aos-duration="900" data-aos-delay="60">
+          <div
+            class="glass-panel"
+            data-aos="fade-up"
+            data-aos-duration="900"
+            data-aos-delay="60"
+          >
             <div class="welcome-grid">
               <div class="portrait" aria-hidden="false">
                 <img
@@ -1408,20 +1652,34 @@
                   ✨ <span>Precious Ziara Mamuad</span> ✨
                 </div>
                 <p>
-                  With profound gratitude to God and hearts filled with love, we warmly welcome you to this special celebration honoring the 18th Birthday of our beloved daughter, ✨
-                  Precious Ziara Mamuad ✨
+                  With profound gratitude to God and hearts filled with love, we
+                  warmly welcome you to this special celebration honoring the
+                  18th Birthday of our beloved daughter, ✨ Precious Ziara
+                  Mamuad ✨
                 </p>
                 <p>
-                  Eighteen years ago, our lives were blessed with a precious gift. We watched her grow from a little girl full of innocence and wonder into a remarkable young woman of grace, strength, kindness, and endless dreams.
+                  Eighteen years ago, our lives were blessed with a precious
+                  gift. We watched her grow from a little girl full of innocence
+                  and wonder into a remarkable young woman of grace, strength,
+                  kindness, and endless dreams.
                 </p>
                 <p>
-                  Today marks a beautiful milestone as she embarks on a new journey into adulthood. This celebration is more than a birthday—it is a tribute to the memories she has created, the lessons she has learned, the people who have guided her, and the dreams she continues to pursue.
+                  Today marks a beautiful milestone as she embarks on a new
+                  journey into adulthood. This celebration is more than a
+                  birthday—it is a tribute to the memories she has created, the
+                  lessons she has learned, the people who have guided her, and
+                  the dreams she continues to pursue.
                 </p>
                 <p>
-                  Your presence in her life has helped shape the person she is becoming, and it would be our greatest honor to have you join us as we celebrate this once-in-a-lifetime occasion surrounded by family, friends, and loved ones.
+                  Your presence in her life has helped shape the person she is
+                  becoming, and it would be our greatest honor to have you join
+                  us as we celebrate this once-in-a-lifetime occasion surrounded
+                  by family, friends, and loved ones.
                 </p>
                 <p>
-                  Together, let us create an evening filled with joy, laughter, gratitude, and cherished memories as Precious begins her next chapter.
+                  Together, let us create an evening filled with joy, laughter,
+                  gratitude, and cherished memories as Precious begins her next
+                  chapter.
                 </p>
               </div>
             </div>
@@ -1437,15 +1695,36 @@
             <p class="lead">Counting down to August 22, 2026 • 5:00 PM.</p>
           </div>
 
-          <div class="countdown" data-aos="fade-up" data-aos-duration="900" data-aos-delay="100">
+          <div
+            class="countdown"
+            data-aos="fade-up"
+            data-aos-duration="900"
+            data-aos-delay="100"
+          >
             <div class="glass-panel countdown-panel">
-              <div class="tick" data-did-init="handleTickInit" aria-label="Countdown timer">
-                <div data-repeat="true" data-layout="horizontal center fit" data-transform="preset(d, h, m, s) -> delay">
+              <div
+                class="tick"
+                data-did-init="handleTickInit"
+                aria-label="Countdown timer"
+              >
+                <div
+                  data-repeat="true"
+                  data-layout="horizontal center fit"
+                  data-transform="preset(d, h, m, s) -> delay"
+                >
                   <div class="tick-group">
-                    <div data-key="value" data-repeat="true" data-transform="pad(00) -> split -> delay">
+                    <div
+                      data-key="value"
+                      data-repeat="true"
+                      data-transform="pad(00) -> split -> delay"
+                    >
                       <span data-view="flip"></span>
                     </div>
-                    <span data-key="label" data-view="text" class="tick-label"></span>
+                    <span
+                      data-key="label"
+                      data-view="text"
+                      class="tick-label"
+                    ></span>
                   </div>
                 </div>
               </div>
@@ -1462,18 +1741,26 @@
             <p class="lead">Formal / Semi-Formal Attire</p>
           </div>
 
-          <div class="dress-grid" data-aos="fade-up" data-aos-duration="900" data-aos-delay="90">
+          <div
+            class="dress-grid"
+            data-aos="fade-up"
+            data-aos-duration="900"
+            data-aos-delay="90"
+          >
             <div class="glass-panel" style="padding: 18px">
               <div class="dress-callout">
                 <div class="pill">
-                  <i class="fa-solid fa-user-tie"></i><strong>Formal / Semi-Formal</strong>
+                  <i class="fa-solid fa-user-tie"></i
+                  ><strong>Formal / Semi-Formal</strong>
                 </div>
                 <div class="pill no-blue">
                   <i class="fa-solid fa-circle-xmark"></i>
                   <strong>No Blue Attire</strong>
                 </div>
                 <p class="lead" style="margin-top: 10px">
-                  To maintain the elegance and harmony of the celebration's color palette, we kindly request that guests refrain from wearing <strong>BLUE</strong> attire in any shade.
+                  To maintain the elegance and harmony of the celebration's
+                  color palette, we kindly request that guests refrain from
+                  wearing <strong>BLUE</strong> attire in any shade.
                 </p>
               </div>
             </div>
@@ -1481,12 +1768,30 @@
             <div class="glass-panel" style="padding: 18px">
               <div class="kicker" style="margin: 0 0 8px">Preferred Colors</div>
               <div class="swatches" aria-label="Preferred color swatches">
-                <div class="swatch"><div class="dot" style="background: var(--champagne)"></div><span>Champagne Gold</span></div>
-                <div class="swatch"><div class="dot" style="background: var(--blush)"></div><span>Blush Pink</span></div>
-                <div class="swatch"><div class="dot" style="background: var(--rose-gold)"></div><span>Rose Gold</span></div>
-                <div class="swatch"><div class="dot" style="background: var(--ivory)"></div><span>Ivory</span></div>
-                <div class="swatch"><div class="dot" style="background: var(--beige)"></div><span>Beige</span></div>
-                <div class="swatch"><div class="dot" style="background: var(--silver)"></div><span>Silver</span></div>
+                <div class="swatch">
+                  <div class="dot" style="background: var(--champagne)"></div>
+                  <span>Champagne Gold</span>
+                </div>
+                <div class="swatch">
+                  <div class="dot" style="background: var(--blush)"></div>
+                  <span>Blush Pink</span>
+                </div>
+                <div class="swatch">
+                  <div class="dot" style="background: var(--rose-gold)"></div>
+                  <span>Rose Gold</span>
+                </div>
+                <div class="swatch">
+                  <div class="dot" style="background: var(--ivory)"></div>
+                  <span>Ivory</span>
+                </div>
+                <div class="swatch">
+                  <div class="dot" style="background: var(--beige)"></div>
+                  <span>Beige</span>
+                </div>
+                <div class="swatch">
+                  <div class="dot" style="background: var(--silver)"></div>
+                  <span>Silver</span>
+                </div>
               </div>
             </div>
           </div>
@@ -1499,28 +1804,165 @@
             <div class="kicker">Kindly respond</div>
             <h2 class="h2">RSVP Details</h2>
             <p class="lead">
-              As seating and catering arrangements are strictly limited and reserved for confirmed guests only, we kindly ask that you respond on or before:
+              As seating and catering arrangements are strictly limited and
+              reserved for confirmed guests only, we kindly ask that you respond
+              on or before:
               <strong>RSVP Deadline: August 4, 2026</strong>
             </p>
           </div>
 
           <div class="rsvp-grid">
-            <div class="glass-panel" data-aos="fade-up" data-aos-duration="900" data-aos-delay="70">
+            <div
+              class="glass-panel"
+              data-aos="fade-up"
+              data-aos-duration="900"
+              data-aos-delay="40"
+            >
+              <div class="rsvp-form-intro">
+                <h3>Send Your Response</h3>
+                <p class="lead">
+                  Please fill out the form below so we can reserve your seat and
+                  prepare for your attendance.
+                </p>
+              </div>
+              <form id="rsvpForm">
+                <input
+                  type="hidden"
+                  name="eventName"
+                  value="The Eighteenth Chapter of Precious Ziara Mamuad"
+                />
+
+                <div class="form-grid">
+                  <div class="field">
+                    <label for="fullName">Full Name</label>
+                    <input
+                      class="control"
+                      id="fullName"
+                      name="fullName"
+                      type="text"
+                      autocomplete="name"
+                      required
+                    />
+                    <span class="error" id="fullNameError"></span>
+                  </div>
+
+                  <div class="field">
+                    <label for="phone">Phone Number</label>
+                    <input
+                      class="control"
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      autocomplete="tel"
+                      required
+                    />
+                    <span class="error" id="phoneError"></span>
+                  </div>
+
+                  <div class="field">
+                    <label for="email">Email</label>
+                    <input
+                      class="control"
+                      id="email"
+                      name="email"
+                      type="email"
+                      autocomplete="email"
+                    />
+                    <span class="error" id="emailError"></span>
+                  </div>
+
+                  <div class="field">
+                    <label for="attendance">Attendance</label>
+                    <select
+                      class="control"
+                      id="attendance"
+                      name="attendance"
+                      required
+                    >
+                      <option value="">Select one</option>
+                      <option value="Yes">Yes, I will attend</option>
+                      <option value="No">Sorry, I cannot attend</option>
+                    </select>
+                    <span class="error" id="attendanceError"></span>
+                  </div>
+
+                  <div class="field">
+                    <label for="guests">Number of Guests</label>
+                    <input
+                      class="control"
+                      id="guests"
+                      name="guests"
+                      type="number"
+                      min="0"
+                      max="10"
+                      value="0"
+                    />
+                    <span class="error" id="guestsError"></span>
+                  </div>
+
+                  <div class="field">
+                    <label for="relationship">Relationship</label>
+                    <input
+                      class="control"
+                      id="relationship"
+                      name="relationship"
+                      type="text"
+                      placeholder="Family, friend, classmate..."
+                    />
+                    <span class="error" id="relationshipError"></span>
+                  </div>
+
+                  <div class="field field-full">
+                    <label for="message">Message</label>
+                    <textarea
+                      class="control"
+                      id="message"
+                      name="message"
+                      placeholder="Optional message for the family"
+                    ></textarea>
+                    <span class="error" id="messageError"></span>
+                  </div>
+                </div>
+
+                <div class="form-actions">
+                  <button class="btn btn-primary" id="rsvpSubmit" type="submit">
+                    Submit RSVP
+                    <i class="fa-solid fa-paper-plane"></i>
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <div
+              class="glass-panel"
+              data-aos="fade-up"
+              data-aos-duration="900"
+              data-aos-delay="70"
+            >
               <div class="contact-list">
                 <div>
                   <h3>Important Note</h3>
                   <p class="lead" style="margin-top: 8px">
-                    Please note that attendance will be honored only for guests who have confirmed their participation. We respectfully request that no additional guests accompany invitees unless previously approved by the hosts. Your prompt response will greatly assist us in making the necessary preparations for a memorable and enjoyable evening for everyone.
+                    Please note that attendance will be honored only for guests
+                    who have confirmed their participation. We respectfully
+                    request that no additional guests accompany invitees unless
+                    previously approved by the hosts. Your prompt response will
+                    greatly assist us in making the necessary preparations for a
+                    memorable and enjoyable evening for everyone.
                   </p>
                 </div>
                 <div>
                   <h3>Contact Information</h3>
                   <div class="contact-card" style="margin-top: 12px">
                     <strong>Felimon Mamuad</strong>
-                    <div class="contact-row"><i class="fa-solid fa-phone"></i><span>CP#: 16476084117</span></div>
+                    <div class="contact-row">
+                      <i class="fa-solid fa-phone"></i
+                      ><span>CP#: 16476084117</span>
+                    </div>
                     <div class="contact-row contact-row--with-action">
                       <div class="contact-left">
-                        <i class="fa-regular fa-envelope"></i><span>Email: mon.mamuad@gmail.com</span>
+                        <i class="fa-regular fa-envelope"></i
+                        ><span>Email: mon.mamuad@gmail.com</span>
                       </div>
                       <a
                         class="btn btn-contact btn-messenger"
@@ -1535,10 +1977,14 @@
                   </div>
                   <div class="contact-card" style="margin-top: 12px">
                     <strong>Ludy Galicinao</strong>
-                    <div class="contact-row"><i class="fa-solid fa-phone"></i><span>CP#: 16479882122</span></div>
+                    <div class="contact-row">
+                      <i class="fa-solid fa-phone"></i
+                      ><span>CP#: 16479882122</span>
+                    </div>
                     <div class="contact-row contact-row--with-action">
                       <div class="contact-left">
-                        <i class="fa-regular fa-envelope"></i><span>Email: lscgalicinao@gmail.com</span>
+                        <i class="fa-regular fa-envelope"></i
+                        ><span>Email: lscgalicinao@gmail.com</span>
                       </div>
                       <a
                         class="btn btn-contact btn-messenger"
@@ -1563,10 +2009,17 @@
           <div class="section-head" data-aos="fade-up" data-aos-duration="900">
             <div class="kicker">Save the date</div>
             <h2 class="h2">Event Details</h2>
-            <p class="lead">Everything you need for a seamless evening of elegance.</p>
+            <p class="lead">
+              Everything you need for a seamless evening of elegance.
+            </p>
           </div>
 
-          <div class="details-grid" data-aos="fade-up" data-aos-duration="900" data-aos-delay="80">
+          <div
+            class="details-grid"
+            data-aos="fade-up"
+            data-aos-duration="900"
+            data-aos-delay="80"
+          >
             <article class="card">
               <h3>Date</h3>
               <div class="detail-row">
@@ -1594,7 +2047,12 @@
             </article>
           </div>
 
-          <div class="map-wrap" data-aos="fade-up" data-aos-duration="900" data-aos-delay="120">
+          <div
+            class="map-wrap"
+            data-aos="fade-up"
+            data-aos-duration="900"
+            data-aos-delay="120"
+          >
             <iframe
               title="Map to QSSIS Banquet Hall"
               loading="lazy"
@@ -1603,7 +2061,12 @@
             ></iframe>
           </div>
 
-          <div class="map-actions" data-aos="fade-up" data-aos-duration="900" data-aos-delay="150">
+          <div
+            class="map-actions"
+            data-aos="fade-up"
+            data-aos-duration="900"
+            data-aos-delay="150"
+          >
             <a
               class="btn btn-primary"
               target="_blank"
@@ -1632,11 +2095,17 @@
 
       <section class="quote" id="closing">
         <div class="quote-inner">
-          <div class="glass-panel quote-card" data-aos="fade-up" data-aos-duration="900">
+          <div
+            class="glass-panel quote-card"
+            data-aos="fade-up"
+            data-aos-duration="900"
+          >
             <p class="quote-text">
-              “Every chapter tells a story, and every story is made meaningful by the people who become part of it.
+              “Every chapter tells a story, and every story is made meaningful
+              by the people who become part of it.
               <br />
-              Thank you for being part of Precious's journey. We look forward to celebrating this unforgettable milestone with you.”
+              Thank you for being part of Precious's journey. We look forward to
+              celebrating this unforgettable milestone with you.”
             </p>
             <div class="quote-sign">
               With Love and Gratitude,<span>The Mamuad Family ❤️</span>
@@ -1647,15 +2116,28 @@
     </main>
 
     <footer>
-        <div style="text-align: center;" class="foot-meta">© 2026 • All Rights Reserved</div> 
-      
+      <div style="text-align: center" class="foot-meta">
+        © 2026 • All Rights Reserved
+      </div>
     </footer>
 
-    <button class="to-top" id="toTop" type="button" aria-label="Back to top" data-visible="false">
+    <button
+      class="to-top"
+      id="toTop"
+      type="button"
+      aria-label="Back to top"
+      data-visible="false"
+    >
       <i class="fa-solid fa-arrow-up"></i>
     </button>
 
-    <div class="toast" id="toast" role="status" aria-live="polite" data-show="false">
+    <div
+      class="toast"
+      id="toast"
+      role="status"
+      aria-live="polite"
+      data-show="false"
+    >
       <strong id="toastTitle">RSVP Received</strong>
       <p id="toastBody">Thank you. Your response has been noted.</p>
     </div>
@@ -1663,24 +2145,27 @@
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/pqina/flip/dist/flip.min.js"></script>
     <script>
-      const $ = (sel, root = document) => root.querySelector(sel)
-      const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel))
+      const $ = (sel, root = document) => root.querySelector(sel);
+      const $$ = (sel, root = document) =>
+        Array.from(root.querySelectorAll(sel));
 
-      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      const prefersReducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
 
       window.handleTickInit = (tick) => {
-        const counter = Tick.count.down("2026-08-22T17:00:00-04:00")
+        const counter = Tick.count.down("2026-08-22T17:00:00-04:00");
         counter.onupdate = (value) => {
-          tick.value = value
-        }
-      }
+          tick.value = value;
+        };
+      };
 
-      const loadingEl = $("#loading")
+      const loadingEl = $("#loading");
       window.addEventListener("load", () => {
         window.setTimeout(() => {
-          loadingEl.setAttribute("data-state", "hidden")
-        }, 650)
-      })
+          loadingEl.setAttribute("data-state", "hidden");
+        }, 650);
+      });
 
       if (window.AOS) {
         AOS.init({
@@ -1688,64 +2173,173 @@
           easing: "ease-out-cubic",
           once: true,
           offset: 80,
-        })
+        });
       }
 
-      const nav = $("#nav")
-      const toTop = $("#toTop")
-      const revealNavAt = 80
-      const revealTopAt = 520
+      const nav = $("#nav");
+      const toTop = $("#toTop");
+      const revealNavAt = 80;
+      const revealTopAt = 520;
 
       const onScrollUI = () => {
-        const y = window.scrollY || 0
-        nav.dataset.visible = y > revealNavAt ? "true" : "false"
-        toTop.dataset.visible = y > revealTopAt ? "true" : "false"
-      }
-      window.addEventListener("scroll", onScrollUI, { passive: true })
-      onScrollUI()
+        const y = window.scrollY || 0;
+        nav.dataset.visible = y > revealNavAt ? "true" : "false";
+        toTop.dataset.visible = y > revealTopAt ? "true" : "false";
+      };
+      window.addEventListener("scroll", onScrollUI, { passive: true });
+      onScrollUI();
 
       toTop.addEventListener("click", () => {
-        window.scrollTo({ top: 0, behavior: prefersReducedMotion ? "auto" : "smooth" })
-      })
+        window.scrollTo({
+          top: 0,
+          behavior: prefersReducedMotion ? "auto" : "smooth",
+        });
+      });
 
-      const toast = $("#toast")
-      const toastTitle = $("#toastTitle")
-      const toastBody = $("#toastBody")
-      let toastTimer = 0
+      const toast = $("#toast");
+      const toastTitle = $("#toastTitle");
+      const toastBody = $("#toastBody");
+      let toastTimer = 0;
       const showToast = (title, body) => {
-        toastTitle.textContent = title
-        toastBody.textContent = body
-        toast.dataset.show = "true"
-        window.clearTimeout(toastTimer)
+        toastTitle.textContent = title;
+        toastBody.textContent = body;
+        toast.dataset.show = "true";
+        window.clearTimeout(toastTimer);
         toastTimer = window.setTimeout(() => {
-          toast.dataset.show = "false"
-        }, 5200)
+          toast.dataset.show = "false";
+        }, 5200);
+      };
+
+      const RSVP_SCRIPT_URL =
+        "https://script.google.com/macros/s/AKfycbwR9vOQMxw4iQFNNABU0HPuEZPIOWDMK35FDepDIVhEJF7unV_evQim_15_v5Nas4W9/exec";
+      const rsvpForm = $("#rsvpForm");
+      const rsvpSubmit = $("#rsvpSubmit");
+
+      const setFieldError = (field, message) => {
+        const input = rsvpForm?.elements[field];
+        const error = $(`#${field}Error`);
+        if (!input || !error) return;
+        input.setAttribute("aria-invalid", message ? "true" : "false");
+        error.textContent = message;
+      };
+
+      const clearRsvpErrors = () => {
+        if (!rsvpForm) return;
+        ["fullName", "phone", "email", "attendance", "guests"].forEach(
+          (field) => setFieldError(field, ""),
+        );
+      };
+
+      const validateRsvp = () => {
+        clearRsvpErrors();
+
+        const requiredFields = [
+          ["fullName", "Please enter your full name."],
+          ["phone", "Please enter your phone number."],
+          ["attendance", "Please select your attendance."],
+        ];
+
+        let isValid = true;
+        for (const [field, message] of requiredFields) {
+          if (!rsvpForm.elements[field].value.trim()) {
+            setFieldError(field, message);
+            isValid = false;
+          }
+        }
+
+        const email = rsvpForm.elements.email.value.trim();
+        if (email && !rsvpForm.elements.email.checkValidity()) {
+          setFieldError("email", "Please enter a valid email address.");
+          isValid = false;
+        }
+
+        const guests = Number(rsvpForm.elements.guests.value || 0);
+        if (guests < 0 || guests > 10) {
+          setFieldError("guests", "Please enter a number from 0 to 10.");
+          isValid = false;
+        }
+
+        return isValid;
+      };
+
+      if (rsvpForm) {
+        rsvpForm.addEventListener("submit", async (event) => {
+          event.preventDefault();
+
+          if (!validateRsvp()) {
+            showToast(
+              "Please Check RSVP",
+              "Some required details are missing or need correction.",
+            );
+            return;
+          }
+
+          if (RSVP_SCRIPT_URL.includes("PASTE_YOUR_GOOGLE_APPS_SCRIPT")) {
+            showToast(
+              "RSVP Not Connected",
+              "Paste your Google Apps Script web app URL into RSVP_SCRIPT_URL first.",
+            );
+            return;
+          }
+
+          const originalText = rsvpSubmit.textContent.trim();
+          rsvpSubmit.disabled = true;
+          rsvpSubmit.innerHTML =
+            'Sending RSVP <i class="fa-solid fa-spinner fa-spin"></i>';
+
+          try {
+            const formData = new FormData(rsvpForm);
+            formData.append("submittedAt", new Date().toISOString());
+
+            await fetch(RSVP_SCRIPT_URL, {
+              method: "POST",
+              body: formData,
+              mode: "no-cors",
+            });
+
+            rsvpForm.reset();
+            showToast(
+              "RSVP Received",
+              "Thank you. Your response has been submitted.",
+            );
+          } catch (error) {
+            showToast(
+              "RSVP Not Sent",
+              "Please try again or contact the hosts directly.",
+            );
+          } finally {
+            rsvpSubmit.disabled = false;
+            rsvpSubmit.innerHTML = `${originalText} <i class="fa-solid fa-paper-plane"></i>`;
+          }
+        });
       }
 
-      const canvas = $("#particles")
-      const ctx = canvas.getContext("2d")
+      const canvas = $("#particles");
+      const ctx = canvas.getContext("2d");
 
       const particleState = {
         w: 0,
         h: 0,
         dpr: Math.min(2, window.devicePixelRatio || 1),
         particles: [],
-      }
+      };
 
       const resizeCanvas = () => {
-        particleState.w = window.innerWidth
-        particleState.h = window.innerHeight
-        canvas.width = Math.floor(particleState.w * particleState.dpr)
-        canvas.height = Math.floor(particleState.h * particleState.dpr)
-        canvas.style.width = `${particleState.w}px`
-        canvas.style.height = `${particleState.h}px`
-        ctx.setTransform(particleState.dpr, 0, 0, particleState.dpr, 0, 0)
-      }
+        particleState.w = window.innerWidth;
+        particleState.h = window.innerHeight;
+        canvas.width = Math.floor(particleState.w * particleState.dpr);
+        canvas.height = Math.floor(particleState.h * particleState.dpr);
+        canvas.style.width = `${particleState.w}px`;
+        canvas.style.height = `${particleState.h}px`;
+        ctx.setTransform(particleState.dpr, 0, 0, particleState.dpr, 0, 0);
+      };
 
-      const rand = (min, max) => Math.random() * (max - min) + min
+      const rand = (min, max) => Math.random() * (max - min) + min;
 
       const seedParticles = () => {
-        const count = Math.floor(Math.min(78, Math.max(36, particleState.w / 20)))
+        const count = Math.floor(
+          Math.min(78, Math.max(36, particleState.w / 20)),
+        );
         particleState.particles = Array.from({ length: count }, () => ({
           x: rand(0, particleState.w),
           y: rand(0, particleState.h),
@@ -1754,56 +2348,63 @@
           vy: rand(-0.22, 0.22),
           a: rand(0.08, 0.22),
           hue: rand(22, 44),
-        }))
-      }
+        }));
+      };
 
       const drawParticles = () => {
-        ctx.clearRect(0, 0, particleState.w, particleState.h)
-        ctx.globalCompositeOperation = "lighter"
+        ctx.clearRect(0, 0, particleState.w, particleState.h);
+        ctx.globalCompositeOperation = "lighter";
 
         for (const p of particleState.particles) {
-          p.x += p.vx
-          p.y += p.vy
-          if (p.x < -30) p.x = particleState.w + 30
-          if (p.x > particleState.w + 30) p.x = -30
-          if (p.y < -30) p.y = particleState.h + 30
-          if (p.y > particleState.h + 30) p.y = -30
+          p.x += p.vx;
+          p.y += p.vy;
+          if (p.x < -30) p.x = particleState.w + 30;
+          if (p.x > particleState.w + 30) p.x = -30;
+          if (p.y < -30) p.y = particleState.h + 30;
+          if (p.y > particleState.h + 30) p.y = -30;
 
-          const grad = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r * 14)
-          grad.addColorStop(0, `hsla(${p.hue}, 70%, 70%, ${p.a})`)
-          grad.addColorStop(1, "rgba(0,0,0,0)")
-          ctx.fillStyle = grad
-          ctx.beginPath()
-          ctx.arc(p.x, p.y, p.r * 14, 0, Math.PI * 2)
-          ctx.fill()
+          const grad = ctx.createRadialGradient(
+            p.x,
+            p.y,
+            0,
+            p.x,
+            p.y,
+            p.r * 14,
+          );
+          grad.addColorStop(0, `hsla(${p.hue}, 70%, 70%, ${p.a})`);
+          grad.addColorStop(1, "rgba(0,0,0,0)");
+          ctx.fillStyle = grad;
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r * 14, 0, Math.PI * 2);
+          ctx.fill();
         }
 
-        ctx.globalCompositeOperation = "source-over"
-      }
+        ctx.globalCompositeOperation = "source-over";
+      };
 
-      let raf = 0
+      let raf = 0;
       const animateParticles = () => {
-        if (!prefersReducedMotion) drawParticles()
-        raf = requestAnimationFrame(animateParticles)
-      }
+        if (!prefersReducedMotion) drawParticles();
+        raf = requestAnimationFrame(animateParticles);
+      };
 
       const initParticles = () => {
-        if (!ctx) return
-        resizeCanvas()
-        seedParticles()
-        cancelAnimationFrame(raf)
-        animateParticles()
-      }
+        if (!ctx) return;
+        resizeCanvas();
+        seedParticles();
+        cancelAnimationFrame(raf);
+        animateParticles();
+      };
 
-      initParticles()
+      initParticles();
       window.addEventListener(
         "resize",
         () => {
-          resizeCanvas()
-          seedParticles()
+          resizeCanvas();
+          seedParticles();
         },
-        { passive: true }
-      )
+        { passive: true },
+      );
     </script>
   </body>
 </html>
